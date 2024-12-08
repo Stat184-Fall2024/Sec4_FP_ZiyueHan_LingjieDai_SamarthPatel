@@ -52,8 +52,6 @@ unique(drug_overdose_data$STUB_NAME)
 unique(drug_overdose_data$AGE)
 ```
 
-
-
 ```{r}
 # Clean the suicide dataset
 suicide_clean <- suicide_data %>%
