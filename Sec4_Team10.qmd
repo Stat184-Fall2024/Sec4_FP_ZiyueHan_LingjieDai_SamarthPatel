@@ -10,17 +10,164 @@ Quarto enables you to weave together content and executable code into a finished
 
 ## Running Code
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Clean Code
 
 ```{r}
-1 + 1
+# Load libraries
+library(dplyr)
+library(tidyr)
 ```
-
-You can add options to executable code like this
 
 ```{r}
-#| echo: false
-2 * 2
+suicide_data <- read.csv("C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv")
+drug_overdose_data <- read.csv("C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+colnames(suicide_data)
+colnames(drug_overdose_data)
+```
+
+
+```{r}
+head(suicide_data)
+head(drug_overdose_data)
+```
+```{r}
+# View structure
+glimpse(suicide_data)
+glimpse(drug_overdose_data)
+
+# Display first few rows
+head(suicide_data)
+head(drug_overdose_data)
+```
+
+```{r}
+unique(suicide_data$STUB_LABEL)
+unique(suicide_data$STUB_NAME)
+unique(suicide_data$AGE)
+unique(drug_overdose_data$STUB_LABEL)
+unique(drug_overdose_data$STUB_NAME)
+unique(drug_overdose_data$AGE)
+```
+
+
+
+```{r}
+# Clean the suicide dataset
+suicide_clean <- suicide_data %>%
+  mutate(
+    Gender = case_when(
+      grepl("Male", STUB_LABEL) ~ "Male",
+      grepl("Female", STUB_LABEL) ~ "Female",
+      TRUE ~ "All persons"
+    ),
+    Race = case_when(
+      grepl("White", STUB_LABEL) ~ "White",
+      grepl("Black or African American", STUB_LABEL) ~ "Black or African American",
+      grepl("Asian or Pacific Islander", STUB_LABEL) ~ "Asian or Pacific Islander",
+      grepl("American Indian or Alaska Native", STUB_LABEL) ~ "American Indian or Alaska Native",
+      TRUE ~ "Unknown"
+    )
+  ) %>%
+  select(
+    Gender, 
+    Race,
+    Year = YEAR,
+    Age_Group = AGE,
+    Suicide_Rate = ESTIMATE
+  ) %>%
+  filter(Gender != "All persons") # Exclude general rows if needed
+
+# Clean the drug overdose dataset
+drug_overdose_clean <- drug_overdose_data %>%
+  mutate(
+    Gender = case_when(
+      grepl("Male", STUB_LABEL) ~ "Male",
+      grepl("Female", STUB_LABEL) ~ "Female",
+      TRUE ~ "All persons"
+    ),
+    Race = case_when(
+      grepl("White", STUB_LABEL) ~ "White",
+      grepl("Black or African American", STUB_LABEL) ~ "Black or African American",
+      grepl("Asian or Pacific Islander", STUB_LABEL) ~ "Asian or Pacific Islander",
+      grepl("American Indian or Alaska Native", STUB_LABEL) ~ "American Indian or Alaska Native",
+      TRUE ~ "Unknown"
+    )
+  ) %>%
+  select(
+    Gender,
+    Race,
+    Year = YEAR,
+    Age_Group = AGE,
+    Overdose_Rate = ESTIMATE
+  ) %>%
+  filter(Gender != "All persons") # Exclude general rows if needed
+```
+
+
+```{r}
+# Check for missing data
+sum(is.na(suicide_clean))
+sum(is.na(drug_overdose_clean))
+
+# Remove rows with missing data
+suicide_clean <- suicide_clean %>% drop_na()
+drug_overdose_clean <- drug_overdose_clean %>% drop_na()
+```
+
+```{r}
+# Merge the two datasets
+merged_data <- merge(
+  suicide_clean,
+  drug_overdose_clean,
+  by = c("Gender", "Race", "Year", "Age_Group"),
+  all = FALSE 
+)
+
+head(merged_data)
+```
+
+```{r}
+write.csv(merged_data, "Cleaned_Combined_Death_Rates.csv", row.names = FALSE)
+```
+
+```{r}
+summary(merged_data)
+
+# Check unique values
+table(merged_data$Gender)
+table(merged_data$Race)
+table(merged_data$Year)
+table(merged_data$Age_Group)
+```
+
+```{r}
+write.csv(
+  merged_data,
+  "C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv",
+  row.names = FALSE
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
