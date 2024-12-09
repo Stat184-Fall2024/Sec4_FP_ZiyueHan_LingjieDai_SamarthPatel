@@ -4,5 +4,9 @@ format: html
 editor: visual
 ---
 
-## Research Topic: 
+## Research Topic:
+
+#### Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death?
+
+This research question aims to investigate how different demographic groups, defined by both gender and race, are disproportionately affected by two significant public health crises: suicides and drug overdoses.
 
