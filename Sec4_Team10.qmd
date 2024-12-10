@@ -226,8 +226,23 @@ kable(summary_table,
       caption = "Summary Table of Average Suicide and Overdose Rates by Race and Gender")
 ```
 
+```{r}
+# QQ Plot for Suicide Rate
+qqnorm(merged_data$Suicide_Rate, main = "QQ Plot of Suicide Rate")
+qqline(merged_data$Suicide_Rate, col = "red", lwd = 2)
+library(ggplot2)
 
-
+# QQ Plot for Suicide Rate
+ggplot(merged_data, aes(sample = Suicide_Rate)) +
+  stat_qq() +
+  stat_qq_line(color = "red") +
+  labs(
+    title = "QQ Plot of Suicide Rate",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme_minimal()
+```
 
 
 
