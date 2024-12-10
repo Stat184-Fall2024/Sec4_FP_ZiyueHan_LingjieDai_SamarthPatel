@@ -3,6 +3,11 @@ title: "Team 10"
 format: html
 editor: visual
 ---
+
+```{r codeAppend, ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
+      
+```
+
 ## Clean Code
 
 ```{r}
