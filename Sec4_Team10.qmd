@@ -3,13 +3,6 @@ title: "Team 10"
 format: html
 editor: visual
 ---
-
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
 ## Clean Code
 
 ```{r}
@@ -154,16 +147,84 @@ write.csv(
 print("The cleaned and further filtered dataset has been saved successfully!")
 ```
 
+## Exploratory Data Analysis (EDA)
 
+```{r}
+library(ggplot2)
+# Bar chart: Death rates by gender and race
+ggplot(data = merged_data, aes(x = Race, y = Suicide_Rate, fill = Gender)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_text(size = 12, face = "bold")
+  ) +
+  labs(
+    title = "Suicide Rates by Race and Gender",
+    x = "Race",
+    y = "Suicide Rate",
+    fill = "Gender"
+  )
+```
 
+```{r}
+# Scatter plot: Comparing suicide and overdose rates
+ggplot(merged_data, aes(x = Suicide_Rate, y = Overdose_Rate, color = Gender)) +
+  geom_point() +
+  labs(title = "Comparison of Suicide and Overdose Rates",
+       x = "Suicide Rate",
+       y = "Overdose Rate",
+       color = "Gender") +
+  theme_minimal()
+```
 
+```{r}
+# Load required library
+library(tidyr)
 
+# Transform data to long format
+merged_data_long <- merged_data %>%
+  pivot_longer(cols = c(Suicide_Rate, Overdose_Rate), 
+               names_to = "Variable", 
+               values_to = "Rate")
 
+# Heatmap: Combined rates by race and gender
+library(ggplot2)
 
+ggplot(data = merged_data_long, aes(x = Race, y = Gender, fill = Rate)) +
+  geom_tile(color = "white") +
+  facet_wrap(~ Variable, scales = "free", ncol = 2) + # Adjust facets
+  scale_fill_gradient(low = "lightblue", high = "darkblue", name = "Rate") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10), # Rotate and space x-axis labels
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_text(size = 12, face = "bold"),
+    strip.text = element_text(size = 12, face = "bold") # For facet titles
+  ) +
+  labs(
+    title = "Heatmap of Suicide and Overdose Rates by Race and Gender",
+    x = "Race",
+    y = "Gender"
+  )
+```
 
+```{r}
+# Summarize the data by Race and Gender
+summary_table <- merged_data %>%
+  group_by(Race, Gender) %>%
+  summarise(
+    Avg_Suicide_Rate = mean(Suicide_Rate, na.rm = TRUE),
+    Avg_Overdose_Rate = mean(Overdose_Rate, na.rm = TRUE)
+  )
 
-
-
+# Display the summary table
+library(knitr)
+kable(summary_table, 
+      col.names = c("Race", "Gender", "Average Suicide Rate", "Average Overdose Rate"),
+      caption = "Summary Table of Average Suicide and Overdose Rates by Race and Gender")
+```
 
 
 
