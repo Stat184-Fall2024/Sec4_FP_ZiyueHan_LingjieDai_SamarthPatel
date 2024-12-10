@@ -124,7 +124,10 @@ merged_data <- merge(
   all = FALSE 
 )
 
-head(merged_data)
+merged_data <- merged_data %>%
+  filter(Race != "Unknown") %>% # Remove rows with unknown race
+  select(-Age_Group, -Year)     # Drop the Age_Group and Year columns entirely
+
 ```
 
 ```{r}
@@ -147,6 +150,8 @@ write.csv(
   "C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv",
   row.names = FALSE
 )
+
+print("The cleaned and further filtered dataset has been saved successfully!")
 ```
 
 

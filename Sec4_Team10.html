@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Team 10</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Sec4_Team10_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Sec4_Team10_files/libs/quarto-html/quarto.js"></script>
+<script src="Sec4_Team10_files/libs/quarto-html/popper.min.js"></script>
+<script src="Sec4_Team10_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Sec4_Team10_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Sec4_Team10_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Sec4_Team10_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Sec4_Team10_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Sec4_Team10_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Sec4_Team10_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Team 10</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+</section>
+<section id="clean-code" class="level2">
+<h2 class="anchored" data-anchor-id="clean-code">Clean Code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>suicide_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>drug_overdose_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(suicide_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "INDICATOR"      "UNIT"           "UNIT_NUM"       "STUB_NAME"     
+ [5] "STUB_NAME_NUM"  "STUB_LABEL"     "STUB_LABEL_NUM" "YEAR"          
+ [9] "YEAR_NUM"       "AGE"            "AGE_NUM"        "ESTIMATE"      
+[13] "FLAG"          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(drug_overdose_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "INDICATOR"      "PANEL"          "PANEL_NUM"      "UNIT"          
+ [5] "UNIT_NUM"       "STUB_NAME"      "STUB_NAME_NUM"  "STUB_LABEL"    
+ [9] "STUB_LABEL_NUM" "YEAR"           "YEAR_NUM"       "AGE"           
+[13] "AGE_NUM"        "ESTIMATE"       "FLAG"          </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(suicide_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                INDICATOR                                                 UNIT
+1 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+2 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+3 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+4 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+5 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+6 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+  UNIT_NUM STUB_NAME STUB_NAME_NUM  STUB_LABEL STUB_LABEL_NUM YEAR YEAR_NUM
+1        1     Total             0 All persons              0 1950        1
+2        1     Total             0 All persons              0 1960        2
+3        1     Total             0 All persons              0 1970        3
+4        1     Total             0 All persons              0 1980        4
+5        1     Total             0 All persons              0 1981        5
+6        1     Total             0 All persons              0 1982        6
+       AGE AGE_NUM ESTIMATE FLAG
+1 All ages       0     13.2     
+2 All ages       0     12.5     
+3 All ages       0     13.1     
+4 All ages       0     12.2     
+5 All ages       0     12.3     
+6 All ages       0     12.5     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drug_overdose_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  INDICATOR                    PANEL PANEL_NUM
+1 Drug overdose death rates All drug overdose deaths         0
+2 Drug overdose death rates All drug overdose deaths         0
+3 Drug overdose death rates All drug overdose deaths         0
+4 Drug overdose death rates All drug overdose deaths         0
+5 Drug overdose death rates All drug overdose deaths         0
+6 Drug overdose death rates All drug overdose deaths         0
+                                                  UNIT UNIT_NUM STUB_NAME
+1 Deaths per 100,000 resident population, age-adjusted        1     Total
+2 Deaths per 100,000 resident population, age-adjusted        1     Total
+3 Deaths per 100,000 resident population, age-adjusted        1     Total
+4 Deaths per 100,000 resident population, age-adjusted        1     Total
+5 Deaths per 100,000 resident population, age-adjusted        1     Total
+6 Deaths per 100,000 resident population, age-adjusted        1     Total
+  STUB_NAME_NUM  STUB_LABEL STUB_LABEL_NUM YEAR YEAR_NUM      AGE AGE_NUM
+1             0 All persons            0.1 1999        1 All ages     1.1
+2             0 All persons            0.1 2000        2 All ages     1.1
+3             0 All persons            0.1 2001        3 All ages     1.1
+4             0 All persons            0.1 2002        4 All ages     1.1
+5             0 All persons            0.1 2003        5 All ages     1.1
+6             0 All persons            0.1 2004        6 All ages     1.1
+  ESTIMATE FLAG
+1      6.1     
+2      6.2     
+3      6.8     
+4      8.2     
+5      8.9     
+6      9.4     </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View structure</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(suicide_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,390
+Columns: 13
+$ INDICATOR      &lt;chr&gt; "Death rates for suicide", "Death rates for suicide", "…
+$ UNIT           &lt;chr&gt; "Deaths per 100,000 resident population, age-adjusted",…
+$ UNIT_NUM       &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ STUB_NAME      &lt;chr&gt; "Total", "Total", "Total", "Total", "Total", "Total", "…
+$ STUB_NAME_NUM  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ STUB_LABEL     &lt;chr&gt; "All persons", "All persons", "All persons", "All perso…
+$ STUB_LABEL_NUM &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ YEAR           &lt;int&gt; 1950, 1960, 1970, 1980, 1981, 1982, 1983, 1984, 1985, 1…
+$ YEAR_NUM       &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, …
+$ AGE            &lt;chr&gt; "All ages", "All ages", "All ages", "All ages", "All ag…
+$ AGE_NUM        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ ESTIMATE       &lt;dbl&gt; 13.2, 12.5, 13.1, 12.2, 12.3, 12.5, 12.4, 12.6, 12.5, 1…
+$ FLAG           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "",…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(drug_overdose_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,228
+Columns: 15
+$ INDICATOR      &lt;chr&gt; "Drug overdose death rates", "Drug overdose death rates…
+$ PANEL          &lt;chr&gt; "All drug overdose deaths", "All drug overdose deaths",…
+$ PANEL_NUM      &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ UNIT           &lt;chr&gt; "Deaths per 100,000 resident population, age-adjusted",…
+$ UNIT_NUM       &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ STUB_NAME      &lt;chr&gt; "Total", "Total", "Total", "Total", "Total", "Total", "…
+$ STUB_NAME_NUM  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ STUB_LABEL     &lt;chr&gt; "All persons", "All persons", "All persons", "All perso…
+$ STUB_LABEL_NUM &lt;dbl&gt; 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, …
+$ YEAR           &lt;int&gt; 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2…
+$ YEAR_NUM       &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, …
+$ AGE            &lt;chr&gt; "All ages", "All ages", "All ages", "All ages", "All ag…
+$ AGE_NUM        &lt;dbl&gt; 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, …
+$ ESTIMATE       &lt;dbl&gt; 6.1, 6.2, 6.8, 8.2, 8.9, 9.4, 10.1, 11.5, 11.9, 11.9, 1…
+$ FLAG           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "", "",…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display first few rows</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(suicide_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                INDICATOR                                                 UNIT
+1 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+2 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+3 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+4 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+5 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+6 Death rates for suicide Deaths per 100,000 resident population, age-adjusted
+  UNIT_NUM STUB_NAME STUB_NAME_NUM  STUB_LABEL STUB_LABEL_NUM YEAR YEAR_NUM
+1        1     Total             0 All persons              0 1950        1
+2        1     Total             0 All persons              0 1960        2
+3        1     Total             0 All persons              0 1970        3
+4        1     Total             0 All persons              0 1980        4
+5        1     Total             0 All persons              0 1981        5
+6        1     Total             0 All persons              0 1982        6
+       AGE AGE_NUM ESTIMATE FLAG
+1 All ages       0     13.2     
+2 All ages       0     12.5     
+3 All ages       0     13.1     
+4 All ages       0     12.2     
+5 All ages       0     12.3     
+6 All ages       0     12.5     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drug_overdose_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  INDICATOR                    PANEL PANEL_NUM
+1 Drug overdose death rates All drug overdose deaths         0
+2 Drug overdose death rates All drug overdose deaths         0
+3 Drug overdose death rates All drug overdose deaths         0
+4 Drug overdose death rates All drug overdose deaths         0
+5 Drug overdose death rates All drug overdose deaths         0
+6 Drug overdose death rates All drug overdose deaths         0
+                                                  UNIT UNIT_NUM STUB_NAME
+1 Deaths per 100,000 resident population, age-adjusted        1     Total
+2 Deaths per 100,000 resident population, age-adjusted        1     Total
+3 Deaths per 100,000 resident population, age-adjusted        1     Total
+4 Deaths per 100,000 resident population, age-adjusted        1     Total
+5 Deaths per 100,000 resident population, age-adjusted        1     Total
+6 Deaths per 100,000 resident population, age-adjusted        1     Total
+  STUB_NAME_NUM  STUB_LABEL STUB_LABEL_NUM YEAR YEAR_NUM      AGE AGE_NUM
+1             0 All persons            0.1 1999        1 All ages     1.1
+2             0 All persons            0.1 2000        2 All ages     1.1
+3             0 All persons            0.1 2001        3 All ages     1.1
+4             0 All persons            0.1 2002        4 All ages     1.1
+5             0 All persons            0.1 2003        5 All ages     1.1
+6             0 All persons            0.1 2004        6 All ages     1.1
+  ESTIMATE FLAG
+1      6.1     
+2      6.2     
+3      6.8     
+4      8.2     
+5      8.9     
+6      9.4     </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>STUB_LABEL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "All persons"                                                                                 
+  [2] "Male"                                                                                        
+  [3] "Female"                                                                                      
+  [4] "Male: White"                                                                                 
+  [5] "Male: Black or African American"                                                             
+  [6] "Male: American Indian or Alaska Native"                                                      
+  [7] "Male: Asian or Pacific Islander"                                                             
+  [8] "Female: White"                                                                               
+  [9] "Female: Black or African American"                                                           
+ [10] "Female: American Indian or Alaska Native"                                                    
+ [11] "Female: Asian or Pacific Islander"                                                           
+ [12] "Male: Not Hispanic or Latino: White"                                                         
+ [13] "Male: Not Hispanic or Latino: Black or African American"                                     
+ [14] "Male: Hispanic or Latino: All races"                                                         
+ [15] "Male: Not Hispanic or Latino: American Indian or Alaska Native"                              
+ [16] "Male: Not Hispanic or Latino: Asian or Pacific Islander"                                     
+ [17] "Female: Not Hispanic or Latino: White"                                                       
+ [18] "Female: Not Hispanic or Latino: Black or African American"                                   
+ [19] "Female: Hispanic or Latino: All races"                                                       
+ [20] "Female: Not Hispanic or Latino: American Indian or Alaska Native"                            
+ [21] "Female: Not Hispanic or Latino: Asian or Pacific Islander"                                   
+ [22] "Male: Not Hispanic or Latino: Asian"                                                         
+ [23] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander"                     
+ [24] "Female: Not Hispanic or Latino: Asian"                                                       
+ [25] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander"                   
+ [26] "10-14 years"                                                                                 
+ [27] "15-24 years"                                                                                 
+ [28] "15-19 years"                                                                                 
+ [29] "20-24 years"                                                                                 
+ [30] "25-44 years"                                                                                 
+ [31] "25-34 years"                                                                                 
+ [32] "35-44 years"                                                                                 
+ [33] "45-64 years"                                                                                 
+ [34] "45-54 years"                                                                                 
+ [35] "55-64 years"                                                                                 
+ [36] "65 years and over"                                                                           
+ [37] "65-74 years"                                                                                 
+ [38] "75-84 years"                                                                                 
+ [39] "85 years and over"                                                                           
+ [40] "Male: 10-14 years"                                                                           
+ [41] "Male: 15-24 years"                                                                           
+ [42] "Male: 15-19 years"                                                                           
+ [43] "Male: 20-24 years"                                                                           
+ [44] "Male: 25-44 years"                                                                           
+ [45] "Male: 25-34 years"                                                                           
+ [46] "Male: 35-44 years"                                                                           
+ [47] "Male: 45-64 years"                                                                           
+ [48] "Male: 45-54 years"                                                                           
+ [49] "Male: 55-64 years"                                                                           
+ [50] "Male: 65 years and over"                                                                     
+ [51] "Male: 65-74 years"                                                                           
+ [52] "Male: 75-84 years"                                                                           
+ [53] "Male: 85 years and over"                                                                     
+ [54] "Female: 10-14 years"                                                                         
+ [55] "Female: 15-24 years"                                                                         
+ [56] "Female: 15-19 years"                                                                         
+ [57] "Female: 20-24 years"                                                                         
+ [58] "Female: 25-44 years"                                                                         
+ [59] "Female: 25-34 years"                                                                         
+ [60] "Female: 35-44 years"                                                                         
+ [61] "Female: 45-64 years"                                                                         
+ [62] "Female: 45-54 years"                                                                         
+ [63] "Female: 55-64 years"                                                                         
+ [64] "Female: 65 years and over"                                                                   
+ [65] "Female: 65-74 years"                                                                         
+ [66] "Female: 75-84 years"                                                                         
+ [67] "Female: 85 years and over"                                                                   
+ [68] "Male: White: 15-24 years"                                                                    
+ [69] "Male: White: 25-44 years"                                                                    
+ [70] "Male: White: 45-64 years"                                                                    
+ [71] "Male: White: 65 years and over"                                                              
+ [72] "Male: White: 65-74 years"                                                                    
+ [73] "Male: White: 75-84 years"                                                                    
+ [74] "Male: White: 85 years and over"                                                              
+ [75] "Male: Black or African American: 15-24 years"                                                
+ [76] "Male: Black or African American: 25-44 years"                                                
+ [77] "Male: Black or African American: 45-64 years"                                                
+ [78] "Male: Black or African American: 65 years and over"                                          
+ [79] "Male: Black or African American: 65-74 years"                                                
+ [80] "Male: Black or African American: 75-84 years"                                                
+ [81] "Male: Black or African American: 85 years and over"                                          
+ [82] "Male: American Indian or Alaska Native: 15-24 years"                                         
+ [83] "Male: American Indian or Alaska Native: 25-44 years"                                         
+ [84] "Male: American Indian or Alaska Native: 45-64 years"                                         
+ [85] "Male: American Indian or Alaska Native: 65 years and over"                                   
+ [86] "Male: Asian or Pacific Islander: 15-24 years"                                                
+ [87] "Male: Asian or Pacific Islander: 25-44 years"                                                
+ [88] "Male: Asian or Pacific Islander: 45-64 years"                                                
+ [89] "Male: Asian or Pacific Islander: 65 years and over"                                          
+ [90] "Female: White: 15-24 years"                                                                  
+ [91] "Female: White: 25-44 years"                                                                  
+ [92] "Female: White: 45-64 years"                                                                  
+ [93] "Female: White: 65 years and over"                                                            
+ [94] "Female: Black or African American: 15-24 years"                                              
+ [95] "Female: Black or African American: 25-44 years"                                              
+ [96] "Female: Black or African American: 45-64 years"                                              
+ [97] "Female: Black or African American: 65 years and over"                                        
+ [98] "Female: American Indian or Alaska Native: 15-24 years"                                       
+ [99] "Female: American Indian or Alaska Native: 25-44 years"                                       
+[100] "Female: American Indian or Alaska Native: 45-64 years"                                       
+[101] "Female: American Indian or Alaska Native: 65 years and over"                                 
+[102] "Female: Asian or Pacific Islander: 15-24 years"                                              
+[103] "Female: Asian or Pacific Islander: 25-44 years"                                              
+[104] "Female: Asian or Pacific Islander: 45-64 years"                                              
+[105] "Female: Asian or Pacific Islander: 65 years and over"                                        
+[106] "Male: Not Hispanic or Latino: American Indian or Alaska Native: 15-24 years"                 
+[107] "Male: Not Hispanic or Latino: White: 15-24 years"                                            
+[108] "Male: Not Hispanic or Latino: American Indian or Alaska Native: 25-44 years"                 
+[109] "Male: Not Hispanic or Latino: American Indian or Alaska Native: 45-64 years"                 
+[110] "Male: Not Hispanic or Latino: American Indian or Alaska Native: 65 years and over"           
+[111] "Male: Not Hispanic or Latino: Asian or Pacific Islander: 15-24 years"                        
+[112] "Male: Not Hispanic or Latino: Asian or Pacific Islander: 25-44 years"                        
+[113] "Male: Not Hispanic or Latino: Asian or Pacific Islander: 45-64 years"                        
+[114] "Male: Not Hispanic or Latino: Asian or Pacific Islander: 65 years and over"                  
+[115] "Female: Not Hispanic or Latino: American Indian or Alaska Native: 15-24 years"               
+[116] "Female: Not Hispanic or Latino: American Indian or Alaska Native: 25-44 years"               
+[117] "Female: Not Hispanic or Latino: American Indian or Alaska Native: 45-64 years"               
+[118] "Female: Not Hispanic or Latino: American Indian or Alaska Native: 65 years and over"         
+[119] "Female: Not Hispanic or Latino: Asian or Pacific Islander: 15-24 years"                      
+[120] "Female: Not Hispanic or Latino: Asian or Pacific Islander: 25-44 years"                      
+[121] "Female: Not Hispanic or Latino: Asian or Pacific Islander: 45-64 years"                      
+[122] "Female: Not Hispanic or Latino: Asian or Pacific Islander: 65 years and over"                
+[123] "Male: Not Hispanic or Latino: White: 25-44 years"                                            
+[124] "Male: Not Hispanic or Latino: White: 45-64 years"                                            
+[125] "Male: Not Hispanic or Latino: White: 65 years and over"                                      
+[126] "Male: Not Hispanic or Latino: Black or African American: 15-24 years"                        
+[127] "Male: Not Hispanic or Latino: Black or African American: 25-44 years"                        
+[128] "Male: Not Hispanic or Latino: Black or African American: 45-64 years"                        
+[129] "Male: Not Hispanic or Latino: Black or African American: 65 years and over"                  
+[130] "Male: Hispanic or Latino: All races: 15-24 years"                                            
+[131] "Male: Hispanic or Latino: All races: 25-44 years"                                            
+[132] "Male: Hispanic or Latino: All races: 45-64 years"                                            
+[133] "Male: Hispanic or Latino: All races: 65 years and over"                                      
+[134] "Female: Not Hispanic or Latino: White: 15-24 years"                                          
+[135] "Female: Not Hispanic or Latino: White: 25-44 years"                                          
+[136] "Female: Not Hispanic or Latino: White: 45-64 years"                                          
+[137] "Female: Not Hispanic or Latino: White: 65 years and over"                                    
+[138] "Female: Not Hispanic or Latino: Black or African American: 15-24 years"                      
+[139] "Female: Not Hispanic or Latino: Black or African American: 25-44 years"                      
+[140] "Female: Not Hispanic or Latino: Black or African American: 45-64 years"                      
+[141] "Female: Not Hispanic or Latino: Black or African American: 65 years and over"                
+[142] "Female: Hispanic or Latino: All races: 15-24 years"                                          
+[143] "Female: Hispanic or Latino: All races: 25-44 years"                                          
+[144] "Female: Hispanic or Latino: All races: 45-64 years"                                          
+[145] "Female: Hispanic or Latino: All races: 65 years and over"                                    
+[146] "Male: Not Hispanic or Latino: Asian: 15-24 years"                                            
+[147] "Male: Not Hispanic or Latino: Asian: 25-44 years"                                            
+[148] "Male: Not Hispanic or Latino: Asian: 45-64 years"                                            
+[149] "Male: Not Hispanic or Latino: Asian: 65 years and over"                                      
+[150] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 15-24 years"        
+[151] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 25-44 years"        
+[152] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 45-64 years"        
+[153] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 65 years and over"  
+[154] "Female: Not Hispanic or Latino: Asian: 15-24 years"                                          
+[155] "Female: Not Hispanic or Latino: Asian: 25-44 years"                                          
+[156] "Female: Not Hispanic or Latino: Asian: 45-64 years"                                          
+[157] "Female: Not Hispanic or Latino: Asian: 65 years and over"                                    
+[158] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 15-24 years"      
+[159] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 25-44 years"      
+[160] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 45-64 years"      
+[161] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander: 65 years and over"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>STUB_NAME)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Total"                                              
+ [2] "Sex"                                                
+ [3] "Sex and race"                                       
+ [4] "Sex and race and Hispanic origin"                   
+ [5] "Sex and race (Single race)"                         
+ [6] "Sex and race and Hispanic origin (Single race)"     
+ [7] "Age"                                                
+ [8] "Sex and age"                                        
+ [9] "Sex, age and race"                                  
+[10] "Sex, age and race and Hispanic origin"              
+[11] "Sex, age and race (Single race)"                    
+[12] "Sex, age and race and Hispanic origin (Single race)"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>AGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "All ages"          "10-14 years"       "15-24 years"      
+ [4] "15-19 years"       "20-24 years"       "25-44 years"      
+ [7] "25-34 years"       "35-44 years"       "45-64 years"      
+[10] "45-54 years"       "55-64 years"       "65 years and over"
+[13] "65-74 years"       "75-84 years"       "85 years and over"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>STUB_LABEL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "All persons"                                                              
+ [2] "Male"                                                                     
+ [3] "Female"                                                                   
+ [4] "Male: White"                                                              
+ [5] "Male: Black or African American"                                          
+ [6] "Male: American Indian or Alaska Native"                                   
+ [7] "Male: Asian or Pacific Islander"                                          
+ [8] "Female: White"                                                            
+ [9] "Female: Black or African American"                                        
+[10] "Female: American Indian or Alaska Native"                                 
+[11] "Female: Asian or Pacific Islander"                                        
+[12] "Male: Hispanic or Latino: All races"                                      
+[13] "Male: Not Hispanic or Latino: White"                                      
+[14] "Male: Not Hispanic or Latino: Black"                                      
+[15] "Male: Not Hispanic or Latino: American Indian or Alaska Native"           
+[16] "Male: Not Hispanic or Latino: Asian or Pacific Islander"                  
+[17] "Female: Hispanic or Latino: All races"                                    
+[18] "Female: Not Hispanic or Latino: White"                                    
+[19] "Female: Not Hispanic or Latino: Black"                                    
+[20] "Female: Not Hispanic or Latino: American Indian or Alaska Native"         
+[21] "Female: Not Hispanic or Latino: Asian or Pacific Islander"                
+[22] "Under 15 years"                                                           
+[23] "15-24 years"                                                              
+[24] "25-34 years"                                                              
+[25] "35-44 years"                                                              
+[26] "45-54 years"                                                              
+[27] "55-64 years"                                                              
+[28] "65-74 years"                                                              
+[29] "75-84 years"                                                              
+[30] "85 years and over"                                                        
+[31] "Male: Under 15 years"                                                     
+[32] "Male: 15-24 years"                                                        
+[33] "Male: 25-34 years"                                                        
+[34] "Male: 35-44 years"                                                        
+[35] "Male: 45-54 years"                                                        
+[36] "Male: 55-64 years"                                                        
+[37] "Male: 65-74 years"                                                        
+[38] "Male: 75-84 years"                                                        
+[39] "Male: 85 years and over"                                                  
+[40] "Female: Under 15 years"                                                   
+[41] "Female: 15-24 years"                                                      
+[42] "Female: 25-34 years"                                                      
+[43] "Female: 35-44 years"                                                      
+[44] "Female: 45-54 years"                                                      
+[45] "Female: 55-64 years"                                                      
+[46] "Female: 65-74 years"                                                      
+[47] "Female: 75-84 years"                                                      
+[48] "Female: 85 years and over"                                                
+[49] "Male: Not Hispanic or Latino: Asian"                                      
+[50] "Male: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander"  
+[51] "Female: Not Hispanic or Latino: Asian"                                    
+[52] "Female: Not Hispanic or Latino: Native Hawaiian or Other Pacific Islander"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>STUB_NAME)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Total"                                         
+[2] "Sex"                                           
+[3] "Sex and race"                                  
+[4] "Sex and race and Hispanic origin"              
+[5] "Age"                                           
+[6] "Sex and age"                                   
+[7] "Sex and race (single race)"                    
+[8] "Sex and race and Hispanic origin (single race)"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>AGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "All ages"          "Under 15 years"    "15-24 years"      
+ [4] "25-34 years"       "35-44 years"       "45-54 years"      
+ [7] "55-64 years"       "65-74 years"       "75-84 years"      
+[10] "85 years and over"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the suicide dataset</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    Gender, </span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">Suicide_Rate =</span> ESTIMATE</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the drug overdose dataset</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>    Gender,</span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">Overdose_Rate =</span> ESTIMATE</span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing data</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(suicide_clean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 906</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(drug_overdose_clean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 924</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing data</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two datasets</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  suicide_clean,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Race"</span>, <span class="st">"Year"</span>, <span class="st">"Age_Group"</span>),</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> <span class="cn">FALSE</span> </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(merged_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Gender                             Race Year Age_Group Suicide_Rate
+1 Female American Indian or Alaska Native 1999  All ages          4.0
+2 Female American Indian or Alaska Native 1999  All ages          4.0
+3 Female American Indian or Alaska Native 1999  All ages          4.0
+4 Female American Indian or Alaska Native 1999  All ages          4.0
+5 Female American Indian or Alaska Native 1999  All ages          4.6
+6 Female American Indian or Alaska Native 1999  All ages          4.6
+  Overdose_Rate
+1           4.6
+2           2.2
+3           1.9
+4           5.2
+5           4.6
+6           2.2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(merged_data, <span class="st">"Cleaned_Combined_Death_Rates.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(merged_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Gender              Race                Year       Age_Group        
+ Length:12012       Length:12012       Min.   :1999   Length:12012      
+ Class :character   Class :character   1st Qu.:2005   Class :character  
+ Mode  :character   Mode  :character   Median :2010   Mode  :character  
+                                       Mean   :2010                     
+                                       3rd Qu.:2016                     
+                                       Max.   :2018                     
+  Suicide_Rate   Overdose_Rate   
+ Min.   : 1.40   Min.   : 0.100  
+ 1st Qu.: 4.60   1st Qu.: 0.900  
+ Median : 8.50   Median : 2.300  
+ Mean   :11.35   Mean   : 4.836  
+ 3rd Qu.:18.50   3rd Qu.: 6.300  
+ Max.   :57.50   Max.   :54.300  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check unique values</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Female   Male 
+  5870   6142 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Race)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+American Indian or Alaska Native        Asian or Pacific Islander 
+                            1588                              952 
+       Black or African American                          Unknown 
+                            1092                             6172 
+                           White 
+                            2208 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 
+ 437  452  465  494  494  506  528  529  525  559  561  548  565  575  567  578 
+2015 2016 2017 2018 
+ 587  595  610 1837 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Age_Group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      15-24 years       25-34 years       35-44 years       45-54 years 
+              494               240               240               240 
+      55-64 years       65-74 years       75-84 years 85 years and over 
+              230               185               112                79 
+         All ages 
+            10192 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  merged_data,</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv"</span>,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
