@@ -10,8 +10,21 @@ author: "Ziyue Han, Lingjie Dai, Samarth Patel"
 
 This research question aims to investigate how different demographic groups, defined by both gender and race, are disproportionately affected by two significant public health crises: suicides and drug overdoses.
 
-# Data Provenance Description
+## Data Provenance Description
 
 The data for this research was sourced from Data.gov, the U.S. government's open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were compiled by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. The purpose of using these datasets is to address the research question: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death? The data includes death rates per 100,000 residents, categorized by gender, race, age group, and year, offering a detailed demographic breakdown. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected.
 
-# Exploratory Data Analysis
+## FAIR Principles
+
+The datasets used in this research align with the FAIR Principles—Findability, Accessibility, Interoperability, and Reusability. These datasets are highly findable, as they are hosted on Data.gov, a widely recognized and centralized government data repository, with detailed metadata that enables easy discovery through search engines. They are accessible to the public without cost or restriction, provided in a standard CSV format that can be downloaded and analyzed using common tools. The datasets are interoperable, as they follow widely accepted standards for data organization, including clear labels, consistent structures, and metadata, which make them easy to integrate with other datasets or software. Finally, they are reusable, as they come with clear attribution to the National Center for Health Statistics (NCHS) and are accompanied by descriptions of their purpose, collection methodology, and scope, ensuring that researchers can repurpose the data for further studies or new questions while maintaining its integrity.
+
+## Attributes for Analysis
+
+The analysis focuses on the following attributes: Gender, Race, Suicide_Rate, and Overdose_Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively. These attributes will be used to identify the demographic combinations (e.g., "White males") most affected by either suicide or drug overdose, answering the research question with clear and actionable insights. 
+
+
+
+
+
+
+## Exploratory Data Analysis
