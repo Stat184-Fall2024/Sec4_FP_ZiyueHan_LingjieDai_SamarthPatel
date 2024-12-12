@@ -4,12 +4,6 @@ format: pdf
 author: "Ziyue Han, Lingjie Dai, Samarth Patel"
 ---
 
-## Research Topic:
-
-#### Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death?
-
-This research question aims to investigate how different demographic groups, defined by both gender and race, are disproportionately affected by two significant public health crises: suicides and drug overdoses.
-
 ## Data Provenance Description
 
 The data for this research was sourced from Data.gov, the U.S. government's open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were compiled by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. The purpose of using these datasets is to address the research question: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death? The data includes death rates per 100,000 residents, categorized by gender, race, age group, and year, offering a detailed demographic breakdown. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected.
@@ -20,11 +14,20 @@ The datasets used in this research align with the FAIR Principles—Findability,
 
 ## Attributes for Analysis
 
-The analysis focuses on the following attributes: Gender, Race, Suicide_Rate, and Overdose_Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively. These attributes will be used to identify the demographic combinations (e.g., "White males") most affected by either suicide or drug overdose, answering the research question with clear and actionable insights. 
+The analysis focuses on the following attributes: Gender, Race, Suicide_Rate, and Overdose_Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively. These attributes will be used to identify the demographic combinations (e.g., "White males") most affected by either suicide or drug overdose, answering the research question with clear and actionable insights.
 
+## Research Topic: Exploring Suicide and Drug Overdose Rates Across Different Population Groups
 
+This study aims to analyze disparities in suicide and drug overdose rates, focusing on demographic factors such as race, gender, and age.
 
+#### Research Question 1: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death?
 
+Suicide and drug overdoses often have intersecting risk factors, such as socioeconomic status and mental health. Examining gender and race intersectionally provides a understanding of vulnerabilities.
 
+#### Research Question 2: How do suicide and drug overdose rates vary across different age groups within each racial demographic group?
 
-## Exploratory Data Analysis
+Different age groups experience unique stressors and risk factors, such as adolescence, midlife crises, or elderly isolation, which may contribute to these outcomes. This research will focus on uncovering age-specific patterns in suicide and drug overdose rates within racial demographic groups.
+
+#### Research Question 3: Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
+
+This question investigates whether suicide rates and drug overdose rates are statistically related within different racial demographic groups. The aim is to explore whether the prevalence of these two public health crises is interconnected, potentially driven by shared underlying causes or social determinants.
