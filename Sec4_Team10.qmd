@@ -24,10 +24,6 @@ This study aims to analyze disparities in suicide and drug overdose rates, focus
 
 Suicide and drug overdoses often have intersecting risk factors, such as socioeconomic status and mental health. Examining gender and race intersectionally provides a understanding of vulnerabilities.
 
-#### Research Question 2: How do suicide and drug overdose rates vary across different age groups within each racial demographic group?
-
-Different age groups experience unique stressors and risk factors, such as adolescence, midlife crises, or elderly isolation, which may contribute to these outcomes. This research will focus on uncovering age-specific patterns in suicide and drug overdose rates within racial demographic groups.
-
-#### Research Question 3: Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
+#### Research Question 2: Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
 
 This question investigates whether suicide rates and drug overdose rates are statistically related within different racial demographic groups. The aim is to explore whether the prevalence of these two public health crises is interconnected, potentially driven by shared underlying causes or social determinants.
