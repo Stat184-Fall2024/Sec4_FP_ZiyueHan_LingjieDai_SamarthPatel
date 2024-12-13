@@ -254,8 +254,25 @@ ggplot(merged_data, aes(sample = Suicide_Rate)) +
 ```{r}
 #Correlation
 
+# Load necessary libraries
+library(dplyr)
+
+# Assuming your dataset is `merged_data` with columns `Suicide_Rate`, `Overdose_Rate`, and `Race`
+
+# Group by Race and calculate correlation for each racial group
+correlation_results <- merged_data %>%
+  group_by(Race) %>%
+  summarize(
+    correlation = cor(Suicide_Rate, Overdose_Rate, use = "complete.obs"),
+    p_value = cor.test(Suicide_Rate, Overdose_Rate, use = "complete.obs")$p.value
+  )
+
+# Print the correlation results
+print(correlation_results)
 
 
+```
+```{r}
 
 ```
 
