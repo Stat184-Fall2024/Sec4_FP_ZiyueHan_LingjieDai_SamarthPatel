@@ -1,29 +1,66 @@
 ---
-title: "Stat184 Team10"
-format: pdf
+title: "Exploring Suicide and Drug Overdose Rates Across Different Population Groups"
 author: "Ziyue Han, Lingjie Dai, Samarth Patel"
+date: "Dec. 13, 2024"
+date-modified: now
+format: 
+  pdf: 
+    toc: false
+    number-sections: true
+    number-depth: 5
+    fig-align: center
+    cap-location: top
+    geometry: 
+      - top=1in
+      - left=1in
+      - right=1in
+      - bottom=1in
+    colorlinks: true
+execute: 
+  echo: false
+  warning: false
 ---
 
-## Data Provenance Description
+## Introduction
 
-The data for this research was sourced from Data.gov, the U.S. government's open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were compiled by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. The purpose of using these datasets is to address the research question: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death? The data includes death rates per 100,000 residents, categorized by gender, race, age group, and year, offering a detailed demographic breakdown. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected.
+Health disparities, particularly those concerning mental health and substance abuse, are among the most critical challenges facing public health systems. Suicide and drug overdoses are leading causes of death in the United States, and their prevalence differs across demographic groups. Examining these disparities provides insights into the populations most at risk and highlights areas for intervention.
 
-## FAIR Principles
+This report investigates three research questions regarding suicide and drug overdose rates: 1. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose? 2. How do drug overdose rates vary by age within each racial demographic group? 3. Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
 
-The datasets used in this research align with the FAIR Principles—Findability, Accessibility, Interoperability, and Reusability. These datasets are highly findable, as they are hosted on Data.gov, a widely recognized and centralized government data repository, with detailed metadata that enables easy discovery through search engines. They are accessible to the public without cost or restriction, provided in a standard CSV format that can be downloaded and analyzed using common tools. The datasets are interoperable, as they follow widely accepted standards for data organization, including clear labels, consistent structures, and metadata, which make them easy to integrate with other datasets or software. Finally, they are reusable, as they come with clear attribution to the National Center for Health Statistics (NCHS) and are accompanied by descriptions of their purpose, collection methodology, and scope, ensuring that researchers can repurpose the data for further studies or new questions while maintaining its integrity.
+We will present background information, describe the methods used for analysis, summarize the collected data, and discuss our findings and their implications.
 
-## Attributes for Analysis
+## Methodology
 
-The analysis focuses on the following attributes: Gender, Race, Suicide_Rate, and Overdose_Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively. These attributes will be used to identify the demographic combinations (e.g., "White males") most affected by either suicide or drug overdose, answering the research question with clear and actionable insights.
+### Data Provenance
 
-## Research Topic: Exploring Suicide and Drug Overdose Rates Across Different Population Groups
+The datasets used in this research were found from Data.gov, the U.S. government's open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were provided by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected. These datasets are aligned with FAIR principles—they are findable, accessible, interoperable, and reusable—and provide the foundation for demographic analyses.
 
-This study aims to analyze disparities in suicide and drug overdose rates, focusing on demographic factors such as race, gender, and age.
+### Attributes for Analysis
 
-#### Research Question 1: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death?
+Our analysis focuses on five key attributes: Gender, Age, Race, Suicide Rate, and Overdose Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively.
 
-Suicide and drug overdoses often have intersecting risk factors, such as socioeconomic status and mental health. Examining gender and race intersectionally provides a understanding of vulnerabilities.
+### Analytical Approach
 
-#### Research Question 2: Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
+To address the research questions, we will use descriptive statistics to summarize suicide and overdose rates across demographic groups, visualization (e.g., histograms, boxplots) to explore patterns and disparities, and correlation analysis to evaluate potential relationships between suicide and drug overdose rates.
 
-This question investigates whether suicide rates and drug overdose rates are statistically related within different racial demographic groups. The aim is to explore whether the prevalence of these two public health crises is interconnected, potentially driven by shared underlying causes or social determinants.
+## Data Exploration
+
+### Summary Statistics
+
+### Visualizations
+
+## Results
+
+### Research Question 1
+
+### Research Question 2
+
+### Research Question 3
+
+## Discussion
+
+## References
+
+Data.gov. (n.d.). Death Rates for Suicide by Sex, Race, Hispanic Origin, and Age. <https://catalog.data.gov/dataset/death-rates-for-suicide-by-sex-race-hispanic-origin-and-age-united-states-020c1>
+
+Data.gov. (n.d.). Drug Overdose Death Rates by Drug Type, Sex, Age, Race, and Hispanic Origin. <https://catalog.data.gov/dataset/drug-overdose-death-rates-by-drug-type-sex-age-race-and-hispanic-origin-united-states-3f72f>
