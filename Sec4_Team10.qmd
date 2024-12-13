@@ -173,6 +173,8 @@ ggplot(data = merged_data, aes(x = Race, y = Suicide_Rate, fill = Gender)) +
   )
 ```
 
+
+
 ```{r}
 # Scatter plot: Comparing suicide and overdose rates
 ggplot(merged_data, aes(x = Suicide_Rate, y = Overdose_Rate, color = Gender)) +
@@ -249,6 +251,13 @@ ggplot(merged_data, aes(sample = Suicide_Rate)) +
   theme_minimal()
 ```
 
+```{r}
+#Correlation
+
+
+
+
+```
 
 
 
