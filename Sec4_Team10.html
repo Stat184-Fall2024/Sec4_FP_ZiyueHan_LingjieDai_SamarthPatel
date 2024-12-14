@@ -618,6 +618,29 @@ $ FLAG           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="data-provenance-description" class="level2">
+<h2 class="anchored" data-anchor-id="data-provenance-description">Data Provenance Description</h2>
+<p>The data for this research was sourced from Data.gov, the U.S. government’s open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were compiled by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. The purpose of using these datasets is to address the research question: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death? The data includes death rates per 100,000 residents, categorized by gender, race, age group, and year, offering a detailed demographic breakdown. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected.</p>
+</section>
+<section id="fair-principles" class="level2">
+<h2 class="anchored" data-anchor-id="fair-principles">FAIR Principles</h2>
+<p>The datasets used in this research align with the FAIR Principles—Findability, Accessibility, Interoperability, and Reusability. These datasets are highly findable, as they are hosted on Data.gov, a widely recognized and centralized government data repository, with detailed metadata that enables easy discovery through search engines. They are accessible to the public without cost or restriction, provided in a standard CSV format that can be downloaded and analyzed using common tools. The datasets are interoperable, as they follow widely accepted standards for data organization, including clear labels, consistent structures, and metadata, which make them easy to integrate with other datasets or software. Finally, they are reusable, as they come with clear attribution to the National Center for Health Statistics (NCHS) and are accompanied by descriptions of their purpose, collection methodology, and scope, ensuring that researchers can repurpose the data for further studies or new questions while maintaining its integrity.</p>
+</section>
+<section id="attributes-for-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="attributes-for-analysis">Attributes for Analysis</h2>
+<p>The analysis focuses on the following attributes: Gender, Race, Suicide_Rate, and Overdose_Rate. These attributes are directly available in the datasets and provide the foundation for examining patterns and disparities. Gender and Race provide demographic context, while Suicide_Rate and Overdose_Rate represent the number of deaths per 100,000 residents for suicides and drug overdoses, respectively. These attributes will be used to identify the demographic combinations (e.g., “White males”) most affected by either suicide or drug overdose, answering the research question with clear and actionable insights.</p>
+</section>
+<section id="research-topic-exploring-suicide-and-drug-overdose-rates-across-different-population-groups" class="level2">
+<h2 class="anchored" data-anchor-id="research-topic-exploring-suicide-and-drug-overdose-rates-across-different-population-groups">Research Topic: Exploring Suicide and Drug Overdose Rates Across Different Population Groups</h2>
+<p>This study aims to analyze disparities in suicide and drug overdose rates, focusing on demographic factors such as race, gender, and age.</p>
+<section id="research-question-1-which-gender-race-combinations-show-the-highest-vulnerability-to-either-suicide-or-drug-overdose-as-a-cause-of-death" class="level4">
+<h4 class="anchored" data-anchor-id="research-question-1-which-gender-race-combinations-show-the-highest-vulnerability-to-either-suicide-or-drug-overdose-as-a-cause-of-death">Research Question 1: Which gender-race combinations show the highest vulnerability to either suicide or drug overdose as a cause of death?</h4>
+<p>Suicide and drug overdoses often have intersecting risk factors, such as socioeconomic status and mental health. Examining gender and race intersectionally provides a understanding of vulnerabilities.</p>
+</section>
+<section id="research-question-2-is-there-a-correlation-between-suicide-rates-and-drug-overdose-rates-in-different-racial-demographic-groups" class="level4">
+<h4 class="anchored" data-anchor-id="research-question-2-is-there-a-correlation-between-suicide-rates-and-drug-overdose-rates-in-different-racial-demographic-groups">Research Question 2: Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?</h4>
+<p>This question investigates whether suicide rates and drug overdose rates are statistically related within different racial demographic groups. The aim is to explore whether the prevalence of these two public health crises is interconnected, potentially driven by shared underlying causes or social determinants.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two datasets</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
@@ -681,6 +704,7 @@ American Indian or Alaska Native        Asian or Pacific Islander
 <pre><code>[1] "The cleaned and further filtered dataset has been saved successfully!"</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="exploratory-data-analysis-eda" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
@@ -849,6 +873,269 @@ American Indian or Alaska Native        Asian or Pacific Islander
 </tbody>
 </table>
 </div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ Plot for Suicide Rate</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(merged_data<span class="sc">$</span>Suicide_Rate, <span class="at">main =</span> <span class="st">"QQ Plot of Suicide Rate"</span>)</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(merged_data<span class="sc">$</span>Suicide_Rate, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ Plot for Suicide Rate</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data, <span class="fu">aes</span>(<span class="at">sample =</span> Suicide_Rate)) <span class="sc">+</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"QQ Plot of Suicide Rate"</span>,</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sample Quantiles"</span></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Correlation</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your dataset is `merged_data` with columns `Suicide_Rate`, `Overdose_Rate`, and `Race`</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by Race and calculate correlation for each racial group</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>correlation_results <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Race) <span class="sc">%&gt;%</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">correlation =</span> <span class="fu">cor</span>(Suicide_Rate, Overdose_Rate, <span class="at">use =</span> <span class="st">"complete.obs"</span>),</span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> <span class="fu">cor.test</span>(Suicide_Rate, Overdose_Rate, <span class="at">use =</span> <span class="st">"complete.obs"</span>)<span class="sc">$</span>p.value</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the correlation results</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(correlation_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  Race                             correlation  p_value
+  &lt;chr&gt;                                  &lt;dbl&gt;    &lt;dbl&gt;
+1 American Indian or Alaska Native       0.228 3.04e-20
+2 Asian or Pacific Islander              0.335 2.00e-26
+3 Black or African American              0.379 1.26e-38
+4 White                                  0.371 5.30e-73</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>suicide_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv"</span>)</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>drug_overdose_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv"</span>)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(suicide_data)</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(drug_overdose_data)</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(suicide_data)</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drug_overdose_data)</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co"># View structure</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(suicide_data)</span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(drug_overdose_data)</span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display first few rows</span></span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(suicide_data)</span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(drug_overdose_data)</span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>STUB_LABEL)</span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>STUB_NAME)</span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(suicide_data<span class="sc">$</span>AGE)</span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>STUB_LABEL)</span>
+<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>STUB_NAME)</span>
+<span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(drug_overdose_data<span class="sc">$</span>AGE)</span>
+<span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the suicide dataset</span></span>
+<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-25"><a href="#cb65-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb65-26"><a href="#cb65-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb65-27"><a href="#cb65-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb65-28"><a href="#cb65-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb65-29"><a href="#cb65-29" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb65-30"><a href="#cb65-30" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb65-31"><a href="#cb65-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb65-32"><a href="#cb65-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb65-33"><a href="#cb65-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb65-34"><a href="#cb65-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb65-35"><a href="#cb65-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb65-36"><a href="#cb65-36" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb65-37"><a href="#cb65-37" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb65-38"><a href="#cb65-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb65-39"><a href="#cb65-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb65-40"><a href="#cb65-40" aria-hidden="true" tabindex="-1"></a>    Gender, </span>
+<span id="cb65-41"><a href="#cb65-41" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb65-42"><a href="#cb65-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb65-43"><a href="#cb65-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb65-44"><a href="#cb65-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">Suicide_Rate =</span> ESTIMATE</span>
+<span id="cb65-45"><a href="#cb65-45" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb65-46"><a href="#cb65-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
+<span id="cb65-47"><a href="#cb65-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-48"><a href="#cb65-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the drug overdose dataset</span></span>
+<span id="cb65-49"><a href="#cb65-49" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-50"><a href="#cb65-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb65-51"><a href="#cb65-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb65-52"><a href="#cb65-52" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb65-53"><a href="#cb65-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb65-54"><a href="#cb65-54" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb65-55"><a href="#cb65-55" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb65-56"><a href="#cb65-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb65-57"><a href="#cb65-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb65-58"><a href="#cb65-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb65-59"><a href="#cb65-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb65-60"><a href="#cb65-60" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb65-61"><a href="#cb65-61" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb65-62"><a href="#cb65-62" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb65-63"><a href="#cb65-63" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb65-64"><a href="#cb65-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb65-65"><a href="#cb65-65" aria-hidden="true" tabindex="-1"></a>    Gender,</span>
+<span id="cb65-66"><a href="#cb65-66" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb65-67"><a href="#cb65-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb65-68"><a href="#cb65-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb65-69"><a href="#cb65-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">Overdose_Rate =</span> ESTIMATE</span>
+<span id="cb65-70"><a href="#cb65-70" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb65-71"><a href="#cb65-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
+<span id="cb65-72"><a href="#cb65-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for missing data</span></span>
+<span id="cb65-73"><a href="#cb65-73" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(suicide_clean))</span>
+<span id="cb65-74"><a href="#cb65-74" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(drug_overdose_clean))</span>
+<span id="cb65-75"><a href="#cb65-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-76"><a href="#cb65-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove rows with missing data</span></span>
+<span id="cb65-77"><a href="#cb65-77" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb65-78"><a href="#cb65-78" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_clean <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb65-79"><a href="#cb65-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two datasets</span></span>
+<span id="cb65-80"><a href="#cb65-80" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
+<span id="cb65-81"><a href="#cb65-81" aria-hidden="true" tabindex="-1"></a>  suicide_clean,</span>
+<span id="cb65-82"><a href="#cb65-82" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean,</span>
+<span id="cb65-83"><a href="#cb65-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Race"</span>, <span class="st">"Year"</span>, <span class="st">"Age_Group"</span>),</span>
+<span id="cb65-84"><a href="#cb65-84" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> <span class="cn">FALSE</span> </span>
+<span id="cb65-85"><a href="#cb65-85" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb65-86"><a href="#cb65-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-87"><a href="#cb65-87" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-88"><a href="#cb65-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">"Unknown"</span>) <span class="sc">%&gt;%</span> <span class="co"># Remove rows with unknown race</span></span>
+<span id="cb65-89"><a href="#cb65-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Age_Group, <span class="sc">-</span>Year)     <span class="co"># Drop the Age_Group and Year columns entirely</span></span>
+<span id="cb65-90"><a href="#cb65-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-91"><a href="#cb65-91" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(merged_data, <span class="st">"Cleaned_Combined_Death_Rates.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb65-92"><a href="#cb65-92" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(merged_data)</span>
+<span id="cb65-93"><a href="#cb65-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-94"><a href="#cb65-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Check unique values</span></span>
+<span id="cb65-95"><a href="#cb65-95" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Gender)</span>
+<span id="cb65-96"><a href="#cb65-96" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Race)</span>
+<span id="cb65-97"><a href="#cb65-97" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Year)</span>
+<span id="cb65-98"><a href="#cb65-98" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(merged_data<span class="sc">$</span>Age_Group)</span>
+<span id="cb65-99"><a href="#cb65-99" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(</span>
+<span id="cb65-100"><a href="#cb65-100" aria-hidden="true" tabindex="-1"></a>  merged_data,</span>
+<span id="cb65-101"><a href="#cb65-101" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv"</span>,</span>
+<span id="cb65-102"><a href="#cb65-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb65-103"><a href="#cb65-103" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb65-104"><a href="#cb65-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-105"><a href="#cb65-105" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"The cleaned and further filtered dataset has been saved successfully!"</span>)</span>
+<span id="cb65-106"><a href="#cb65-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb65-107"><a href="#cb65-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart: Death rates by gender and race</span></span>
+<span id="cb65-108"><a href="#cb65-108" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Suicide_Rate, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb65-109"><a href="#cb65-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb65-110"><a href="#cb65-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb65-111"><a href="#cb65-111" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb65-112"><a href="#cb65-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb65-113"><a href="#cb65-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb65-114"><a href="#cb65-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb65-115"><a href="#cb65-115" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb65-116"><a href="#cb65-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb65-117"><a href="#cb65-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Suicide Rates by Race and Gender"</span>,</span>
+<span id="cb65-118"><a href="#cb65-118" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
+<span id="cb65-119"><a href="#cb65-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Suicide Rate"</span>,</span>
+<span id="cb65-120"><a href="#cb65-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Gender"</span></span>
+<span id="cb65-121"><a href="#cb65-121" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb65-122"><a href="#cb65-122" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot: Comparing suicide and overdose rates</span></span>
+<span id="cb65-123"><a href="#cb65-123" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data, <span class="fu">aes</span>(<span class="at">x =</span> Suicide_Rate, <span class="at">y =</span> Overdose_Rate, <span class="at">color =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb65-124"><a href="#cb65-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb65-125"><a href="#cb65-125" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Suicide and Overdose Rates"</span>,</span>
+<span id="cb65-126"><a href="#cb65-126" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Suicide Rate"</span>,</span>
+<span id="cb65-127"><a href="#cb65-127" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Overdose Rate"</span>,</span>
+<span id="cb65-128"><a href="#cb65-128" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb65-129"><a href="#cb65-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb65-130"><a href="#cb65-130" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required library</span></span>
+<span id="cb65-131"><a href="#cb65-131" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb65-132"><a href="#cb65-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-133"><a href="#cb65-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform data to long format</span></span>
+<span id="cb65-134"><a href="#cb65-134" aria-hidden="true" tabindex="-1"></a>merged_data_long <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-135"><a href="#cb65-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Suicide_Rate, Overdose_Rate), </span>
+<span id="cb65-136"><a href="#cb65-136" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Variable"</span>, </span>
+<span id="cb65-137"><a href="#cb65-137" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Rate"</span>)</span>
+<span id="cb65-138"><a href="#cb65-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-139"><a href="#cb65-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Heatmap: Combined rates by race and gender</span></span>
+<span id="cb65-140"><a href="#cb65-140" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb65-141"><a href="#cb65-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-142"><a href="#cb65-142" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data_long, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Gender, <span class="at">fill =</span> Rate)) <span class="sc">+</span></span>
+<span id="cb65-143"><a href="#cb65-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb65-144"><a href="#cb65-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Variable, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># Adjust facets</span></span>
+<span id="cb65-145"><a href="#cb65-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>, <span class="at">name =</span> <span class="st">"Rate"</span>) <span class="sc">+</span></span>
+<span id="cb65-146"><a href="#cb65-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb65-147"><a href="#cb65-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb65-148"><a href="#cb65-148" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Rotate and space x-axis labels</span></span>
+<span id="cb65-149"><a href="#cb65-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb65-150"><a href="#cb65-150" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb65-151"><a href="#cb65-151" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>) <span class="co"># For facet titles</span></span>
+<span id="cb65-152"><a href="#cb65-152" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb65-153"><a href="#cb65-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb65-154"><a href="#cb65-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Heatmap of Suicide and Overdose Rates by Race and Gender"</span>,</span>
+<span id="cb65-155"><a href="#cb65-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
+<span id="cb65-156"><a href="#cb65-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gender"</span></span>
+<span id="cb65-157"><a href="#cb65-157" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb65-158"><a href="#cb65-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data by Race and Gender</span></span>
+<span id="cb65-159"><a href="#cb65-159" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-160"><a href="#cb65-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Race, Gender) <span class="sc">%&gt;%</span></span>
+<span id="cb65-161"><a href="#cb65-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb65-162"><a href="#cb65-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Suicide_Rate =</span> <span class="fu">mean</span>(Suicide_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb65-163"><a href="#cb65-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Overdose_Rate =</span> <span class="fu">mean</span>(Overdose_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb65-164"><a href="#cb65-164" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb65-165"><a href="#cb65-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-166"><a href="#cb65-166" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the summary table</span></span>
+<span id="cb65-167"><a href="#cb65-167" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb65-168"><a href="#cb65-168" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_table, </span>
+<span id="cb65-169"><a href="#cb65-169" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Race"</span>, <span class="st">"Gender"</span>, <span class="st">"Average Suicide Rate"</span>, <span class="st">"Average Overdose Rate"</span>),</span>
+<span id="cb65-170"><a href="#cb65-170" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Summary Table of Average Suicide and Overdose Rates by Race and Gender"</span>)</span>
+<span id="cb65-171"><a href="#cb65-171" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ Plot for Suicide Rate</span></span>
+<span id="cb65-172"><a href="#cb65-172" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(merged_data<span class="sc">$</span>Suicide_Rate, <span class="at">main =</span> <span class="st">"QQ Plot of Suicide Rate"</span>)</span>
+<span id="cb65-173"><a href="#cb65-173" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(merged_data<span class="sc">$</span>Suicide_Rate, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb65-174"><a href="#cb65-174" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb65-175"><a href="#cb65-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-176"><a href="#cb65-176" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ Plot for Suicide Rate</span></span>
+<span id="cb65-177"><a href="#cb65-177" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data, <span class="fu">aes</span>(<span class="at">sample =</span> Suicide_Rate)) <span class="sc">+</span></span>
+<span id="cb65-178"><a href="#cb65-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb65-179"><a href="#cb65-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb65-180"><a href="#cb65-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb65-181"><a href="#cb65-181" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"QQ Plot of Suicide Rate"</span>,</span>
+<span id="cb65-182"><a href="#cb65-182" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Theoretical Quantiles"</span>,</span>
+<span id="cb65-183"><a href="#cb65-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sample Quantiles"</span></span>
+<span id="cb65-184"><a href="#cb65-184" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb65-185"><a href="#cb65-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb65-186"><a href="#cb65-186" aria-hidden="true" tabindex="-1"></a><span class="co">#Correlation</span></span>
+<span id="cb65-187"><a href="#cb65-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-188"><a href="#cb65-188" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb65-189"><a href="#cb65-189" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb65-190"><a href="#cb65-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-191"><a href="#cb65-191" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your dataset is `merged_data` with columns `Suicide_Rate`, `Overdose_Rate`, and `Race`</span></span>
+<span id="cb65-192"><a href="#cb65-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-193"><a href="#cb65-193" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by Race and calculate correlation for each racial group</span></span>
+<span id="cb65-194"><a href="#cb65-194" aria-hidden="true" tabindex="-1"></a>correlation_results <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb65-195"><a href="#cb65-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Race) <span class="sc">%&gt;%</span></span>
+<span id="cb65-196"><a href="#cb65-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb65-197"><a href="#cb65-197" aria-hidden="true" tabindex="-1"></a>    <span class="at">correlation =</span> <span class="fu">cor</span>(Suicide_Rate, Overdose_Rate, <span class="at">use =</span> <span class="st">"complete.obs"</span>),</span>
+<span id="cb65-198"><a href="#cb65-198" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_value =</span> <span class="fu">cor.test</span>(Suicide_Rate, Overdose_Rate, <span class="at">use =</span> <span class="st">"complete.obs"</span>)<span class="sc">$</span>p.value</span>
+<span id="cb65-199"><a href="#cb65-199" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb65-200"><a href="#cb65-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-201"><a href="#cb65-201" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the correlation results</span></span>
+<span id="cb65-202"><a href="#cb65-202" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(correlation_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
