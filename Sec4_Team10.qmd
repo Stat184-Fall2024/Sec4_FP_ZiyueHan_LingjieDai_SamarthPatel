@@ -227,7 +227,7 @@ print("Tukey HSD Test Results:")
 print(tukey_results)
 
 # Step 6: Adjust graphical parameters for better margins and readability
-par(mar = c(5, 27.5, 6, 2))  # Add extra space at the top for the title
+par(mar = c(5, 27.1, 6, 2))  # Add extra space at the top for the title
 par(cex.axis = 0.6)        # Reduce axis text size
 par(las = 2)               # Rotate axis labels
 
@@ -235,17 +235,6 @@ par(las = 2)               # Rotate axis labels
 plot(tukey_results)
 
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 
 
