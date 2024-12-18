@@ -4,5 +4,76 @@ format: html
 editor: visual
 ---
 
-## Research Topic: 
+## Research Topic 2: Comparison of Suicide and Drug Overdose Rates Across Age Groups
+
+# Libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(knitr)
+
+# Load Datasets
+suicide_data <- read.csv("C:/Users/samar/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv")
+drug_overdose_data <- read.csv("C:/Users/samar/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv")
+
+# Clean the Suicide Dataset
+suicide_clean <- suicide_data %>%
+  mutate(
+    Gender = case_when(
+      grepl("Male", STUB_LABEL) ~ "Male",
+      grepl("Female", STUB_LABEL) ~ "Female",
+      TRUE ~ "All persons"
+    )
+  ) %>%
+  select(Gender, Age_Group = AGE, Year = YEAR, Suicide_Rate = ESTIMATE) %>%
+  filter(Gender == "All persons", !is.na(Suicide_Rate))
+
+# Clean the Drug Overdose Dataset
+drug_overdose_clean <- drug_overdose_data %>%
+  mutate(
+    Gender = case_when(
+      grepl("Male", STUB_LABEL) ~ "Male",
+      grepl("Female", STUB_LABEL) ~ "Female",
+      TRUE ~ "All persons"
+    )
+  ) %>%
+  select(Gender, Age_Group = AGE, Year = YEAR, Overdose_Rate = ESTIMATE) %>%
+  filter(Gender == "All persons", !is.na(Overdose_Rate))
+
+# Merge the Datasets by Age Group and Year
+merged_data <- merge(
+  suicide_clean,
+  drug_overdose_clean,
+  by = c("Age_Group", "Year"),
+  all = FALSE
+)
+
+# Summarize Data: Average Rates Across Age Groups
+age_summary <- merged_data %>%
+  group_by(Age_Group) %>%
+  summarize(
+    Avg_Suicide_Rate = mean(Suicide_Rate, na.rm = TRUE),
+    Avg_Overdose_Rate = mean(Overdose_Rate, na.rm = TRUE)
+  )
+
+# Print Summary Table
+kable(age_summary, col.names = c("Age Group", "Average Suicide Rate", "Average Overdose Rate"), 
+      caption = "Average Suicide and Overdose Rates Across Age Groups")
+
+# Visualize: Bar Chart Comparing Suicide and Overdose Rates
+age_summary_long <- age_summary %>%
+  pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
+               names_to = "Rate_Type", 
+               values_to = "Rate")
+
+ggplot(age_summary_long, aes(x = Age_Group, y = Rate, fill = Rate_Type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Comparison of Suicide and Drug Overdose Rates Across Age Groups",
+    x = "Age Group",
+    y = "Rate (Per 100,000 Residents)",
+    fill = "Rate Type"
+  )
 
