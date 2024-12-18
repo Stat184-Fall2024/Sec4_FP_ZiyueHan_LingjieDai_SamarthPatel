@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-## Research Topic 2: Comparison of Suicide and Drug Overdose Rates Across Age Groups
+### Research Question 2: Comparison of Suicide and Drug Overdose Rates Across Age Groups
 
 # Libraries
 library(dplyr)
