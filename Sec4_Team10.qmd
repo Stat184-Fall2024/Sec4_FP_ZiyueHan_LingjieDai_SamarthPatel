@@ -5,6 +5,7 @@ editor: visual
 ---
 
 ### Research Question 2: Comparison of Suicide and Drug Overdose Rates Across Age Groups
+This question explores the differences in suicide and drug overdose rates across age groups to highlight which ages are most affected. By understanding these patterns, this helps identify where to direct efforts and resources to provide the most effective support for those in need.
 
 # Libraries
 library(dplyr)
