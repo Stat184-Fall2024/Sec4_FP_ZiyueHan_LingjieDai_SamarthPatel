@@ -18,26 +18,6 @@ drug_overdose_data <- read.csv("C:/Users/hanzi/Downloads/Drug_overdose_death_rat
 ```
 
 ```{r}
-colnames(suicide_data)
-colnames(drug_overdose_data)
-```
-
-```{r}
-head(suicide_data)
-head(drug_overdose_data)
-```
-
-```{r}
-# View structure
-glimpse(suicide_data)
-glimpse(drug_overdose_data)
-
-# Display first few rows
-head(suicide_data)
-head(drug_overdose_data)
-```
-
-```{r}
 unique(suicide_data$STUB_LABEL)
 unique(suicide_data$STUB_NAME)
 unique(suicide_data$AGE)
@@ -150,6 +130,8 @@ print("The cleaned and further filtered dataset has been saved successfully!")
 ## Exploratory Data Analysis (EDA)
 
 ```{r}
+#| echo: false
+## Image 1 for Question 1
 library(ggplot2)
 # Bar chart: Death rates by gender and race
 ggplot(data = merged_data, aes(x = Race, y = Suicide_Rate, fill = Gender)) +
@@ -170,6 +152,8 @@ ggplot(data = merged_data, aes(x = Race, y = Suicide_Rate, fill = Gender)) +
 
 
 ```{r}
+#| echo: false
+## Image 2 for Question 1
 # Load required library
 library(tidyr)
 
@@ -201,6 +185,8 @@ ggplot(data = merged_data_long, aes(x = Race, y = Gender, fill = Rate)) +
 ```
 
 ```{r}
+#| echo: false
+## Image 3 for Question 1
 # Summarize the data by Race and Gender
 summary_table <- merged_data %>%
   group_by(Race, Gender) %>%
@@ -216,9 +202,54 @@ kable(summary_table,
       caption = "Summary Table of Average Suicide and Overdose Rates by Race and Gender")
 ```
 
+
 ```{r}
-#| echo: false
+# Step 1: Load the dataset
+data <- read.csv("Cleaned_Combined_Death_Rates.csv")
+
+# Step 2: Clean the data
+# Select relevant columns and remove rows with missing values
+cleaned_data <- data %>%
+  select(Gender, Race, Suicide_Rate) %>%
+  na.omit()
+
+# Step 3: Perform Two-Way ANOVA
+# Test for differences in suicide rates between gender and racial groups
+anova_model <- aov(Suicide_Rate ~ Gender * Race, data = cleaned_data)
+
+# Step 4: Display ANOVA summary
+print("Summary of Two-Way ANOVA:")
+summary(anova_model)
+
+# Step 5: Perform Post-hoc Tukey HSD test
+tukey_results <- TukeyHSD(anova_model)
+print("Tukey HSD Test Results:")
+print(tukey_results)
+
+# Step 6: Adjust graphical parameters for better margins and readability
+par(mar = c(5, 27.5, 6, 2))  # Add extra space at the top for the title
+par(cex.axis = 0.6)        # Reduce axis text size
+par(las = 2)               # Rotate axis labels
+
+# Step 7: Plot Tukey HSD results
+plot(tukey_results)
+
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```{r codeAppend, ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
       
