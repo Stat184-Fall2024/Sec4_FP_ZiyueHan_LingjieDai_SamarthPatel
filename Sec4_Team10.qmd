@@ -1,5 +1,6 @@
 ---
 title: "Exploring Suicide and Drug Overdose Rates Across Different Population Groups"
+subtitle: "Stat 184"
 author: "Ziyue Han, Lingjie Dai, Samarth Patel"
 date: "Dec. 13, 2024"
 date-modified: now
