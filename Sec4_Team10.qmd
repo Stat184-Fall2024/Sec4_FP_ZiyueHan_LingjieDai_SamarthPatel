@@ -10,17 +10,6 @@ theme:
   dark: darkly
 ---
 
-```{r}
-install.packages("xfun")
-
-```
-
-```{r}
-install.packages("tinytex")
-tinytex::install_tinytex()
-```
-
-
 ## Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
 ```{r include=FALSE}
 # This code will run, but the code and its output will be hidden.
@@ -30,8 +19,8 @@ library(tidyr)
 
 ```{r}
 #| echo: false
-suicide_data <- read.csv("C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv")
-drug_overdose_data <- read.csv("C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv")
+suicide_data <- read.csv("https://data.cdc.gov/api/views/95ax-ymtc/rows.csv?accessType=DOWNLOAD")
+drug_overdose_data <- read.csv("https://data.cdc.gov/api/views/9j2v-jamp/rows.csv?accessType=DOWNLOAD")
 ```
 
 ```{r}
