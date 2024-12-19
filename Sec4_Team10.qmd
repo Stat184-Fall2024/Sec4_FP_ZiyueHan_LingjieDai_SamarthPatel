@@ -15,6 +15,8 @@ theme:
 # This code will run, but the code and its output will be hidden.
 library(dplyr)
 library(tidyr)
+install.packages("tinytex")
+tinytex::install_tinytex()
 ```
 
 ```{r}
@@ -228,13 +230,12 @@ print("Tukey HSD Test Results:")
 print(tukey_results)
 
 # Step 6: Adjust graphical parameters for better margins and readability
-par(mar = c(5, 4, 4, 2) + 0.1)
 par(cex.axis = 0.6)        # Reduce axis text size
-par(las = 2)               # Rotate axis labels
+par(las = 2)      # Rotate axis labels
 
+par(mar = c(5, 8, 4, 2))  # Increase left margin for better label visibility
+plot(tukey_results, las = 2, cex.axis = 0.8)  # Rotate axis labels and adjust size
 # Step 7: Plot Tukey HSD results
-plot(tukey_results)
-
 ```
 
 

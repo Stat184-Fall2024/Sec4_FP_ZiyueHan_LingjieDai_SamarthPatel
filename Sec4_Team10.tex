@@ -689,12 +689,12 @@ Male:White-Female:White                                                       0.
 \FunctionTok{print}\NormalTok{(tukey\_results)}
 
 \CommentTok{\# Step 6: Adjust graphical parameters for better margins and readability}
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{) }\SpecialCharTok{+} \FloatTok{0.1}\NormalTok{)}
 \FunctionTok{par}\NormalTok{(}\AttributeTok{cex.axis =} \FloatTok{0.6}\NormalTok{)        }\CommentTok{\# Reduce axis text size}
-\FunctionTok{par}\NormalTok{(}\AttributeTok{las =} \DecValTok{2}\NormalTok{)               }\CommentTok{\# Rotate axis labels}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{las =} \DecValTok{2}\NormalTok{)      }\CommentTok{\# Rotate axis labels}
 
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{))  }\CommentTok{\# Increase left margin for better label visibility}
+\FunctionTok{plot}\NormalTok{(tukey\_results, }\AttributeTok{las =} \DecValTok{2}\NormalTok{, }\AttributeTok{cex.axis =} \FloatTok{0.8}\NormalTok{)  }\CommentTok{\# Rotate axis labels and adjust size}
 \CommentTok{\# Step 7: Plot Tukey HSD results}
-\FunctionTok{plot}\NormalTok{(tukey\_results)}
 \end{Highlighting}
 \end{Shaded}
 
