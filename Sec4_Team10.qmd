@@ -5,7 +5,50 @@ editor: visual
 ---
 
 
+# Research Question 2: How do Suicide and Drug overdose rates vary across different Age Groups?
+
+### Data Preparation
+
+This research question examines the disparities in suicide and drug overdose rates among various age groups. By focusing on age as a demographic factor, this analysis seeks to uncover patterns and trends that indicate which age groups are most at risk for either suicide or drug overdoses. To address this, we merged two datasets, each detailing mortality rates for suicides and drug overdoses, and analyzed their attributes across distinct age groups.
+
 ```{r}
+#| echo: false
+# Visualize: Bar Chart Comparing Suicide and Overdose Rates
+age_summary_long <- age_summary %>%
+  pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
+               names_to = "Rate_Type", 
+               values_to = "Rate")
+
+ggplot(age_summary_long, aes(x = Age_Group, y = Rate, fill = Rate_Type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Comparison of Suicide and Drug Overdose Rates Across Different Age Groups",
+    x = "Age Group",
+    y = "Rate (Per 100,000 Residents)",
+    fill = "Rate Type"
+  )
+```
+
+The trends revealed in the bar chart emphasize the need for a thoughtful and targeted approach to addressing the intertwined challenges of suicide and drug overdose rates across different age groups. The data tells a story that is both sobering and illuminating, underscoring the unique vulnerabilities and stressors that individuals face at different stages of life. By understanding these nuances, we can design interventions that meet people where they are and provide the support they need.
+
+For young adults in the **15–24 years** age group, the relatively low suicide rates offer a glimmer of hope, suggesting that protective factors such as community support and family connections might be playing a role. However, their drug overdose rates, while not the lowest, are a cause for concern. This highlights the importance of proactive efforts to educate young people about the risks of substance abuse while fostering environments that encourage open conversations about mental health. Programs in schools and universities that focus on peer support, resilience-building, and accessible mental health counseling could be instrumental in addressing these challenges before they escalate.
+
+The **25–34 years** age group emerges as the most vulnerable demographic for drug overdoses, with rates peaking during this phase of life. This stage is often defined by major transitions—starting careers, forming relationships, and navigating financial independence. For some, these pressures can lead to substance use as a coping mechanism. To address this, it’s critical to create systems of support that reduce stigma and provide tangible resources. Workplace mental health programs, affordable treatment options, and community-based initiatives could go a long way in alleviating the burden faced by young adults during these formative years.
+
+When it comes to suicide rates, the **45–54 years** age group faces the highest risk of any demographic. This period of life is often marked by mid-life pressures such as financial strain, career stagnation, and caregiving responsibilities, all of which can weigh heavily on mental health. For individuals in this age group, interventions that focus on stress management and relief from caregiving burdens are essential. Employers can play a pivotal role by providing robust mental health benefits, while community organizations could create support groups tailored to the needs of this demographic. Addressing these pressures holistically can help reduce the risk of suicide during this critical stage.
+
+Interestingly, the **65–74 years** age group stands out as the cohort with the lowest rates of drug overdoses and relatively low suicide rates. This stability suggests that this group may benefit from a unique combination of protective factors—perhaps a sense of financial security, established social networks, or fewer life transitions compared to younger or older groups. Studying these factors further could help identify strategies to build resilience in other demographics. However, even this group is not immune, and efforts to maintain their well-being through continued access to health care and social engagement remain vital.
+
+A stark contrast is seen in the **85 years and older** age group, where suicide rates spike once again. This secondary peak tells a poignant story of the challenges associated with aging: isolation, declining health, and grief from losing loved ones. To combat these issues, targeted interventions must focus on increasing social connections for elderly individuals, offering grief counseling, and ensuring mental health care is readily accessible. Programs that facilitate intergenerational engagement, community activities, and in-home support can help reduce the feelings of loneliness and despair that are so common in this demographic.
+
+Across all age groups, one consistent trend stands out: suicide rates surpass drug overdose rates. This underscores the pervasive nature of mental health struggles across the lifespan, even in populations where substance use is a pressing issue. Younger adults may face higher overdose risks, but the concern for suicide remains equally urgent. For older populations, drug overdoses become nearly absent, but the mental health toll of aging takes center stage.
+
+These insights highlight the need for a life-course approach to public health interventions. Each age group faces its own set of challenges, shaped by the unique social, economic, and psychological factors at play during their stage of life. By investing in tailored, age-specific programs, we can address these challenges head-on and create a society that prioritizes mental health and well-being. Whether it’s fostering resilience in young adults, providing stress relief for middle-aged individuals, or supporting the elderly through compassionate care, this data reminds us that prevention and support are always possible. Together, we can reduce the toll of these preventable tragedies and ensure a healthier, more hopeful future for all.
+
+```{r}
+{r}
 #| echo: false
 # Load Required Libraries
 library(dplyr)
@@ -49,39 +92,7 @@ merged_data <- merge(
   all = FALSE
 )
 
-# Summarize Data: Average Rates Across Different Age Groups
-age_summary <- merged_data %>%
-  group_by(Age_Group) %>%
-  summarize(
-    Avg_Suicide_Rate = mean(Suicide_Rate, na.rm = TRUE),
-    Avg_Overdose_Rate = mean(Overdose_Rate, na.rm = TRUE)
-  )
-
-# Print Summary Table
-kable(age_summary, col.names = c("Age Group", "Average Suicide Rate", "Average Overdose Rate"), 
-      caption = "Average Suicide and Overdose Rates Across Age Groups")
 
 
 
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
-```{r}
-# Visualize: Bar Chart Comparing Suicide and Overdose Rates
-age_summary_long <- age_summary %>%
-  pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
-               names_to = "Rate_Type", 
-               values_to = "Rate")
-
-ggplot(age_summary_long, aes(x = Age_Group, y = Rate, fill = Rate_Type)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(
-    title = "Comparison of Suicide and Drug Overdose Rates Across Age Groups",
-    x = "Age Group",
-    y = "Rate (Per 100,000 Residents)",
-    fill = "Rate Type"
-  )
 ```
