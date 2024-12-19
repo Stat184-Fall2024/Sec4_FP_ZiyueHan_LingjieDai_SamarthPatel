@@ -115,8 +115,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Health disparities, particularly those concerning mental health and substance abuse, are among the most critical challenges facing public health systems. Suicide and drug overdoses are leading causes of death in the United States, and their prevalence differs across demographic groups. Examining these disparities provides insights into the populations most at risk and highlights areas for intervention.</p>
 <p>This report investigates three research questions regarding suicide and drug overdose rates:</p>
 <p>1. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?</p>
-<p>2. What are the differences in suicide and drug overdose rates among various age groups?</p>
-<p>3. Is there a significant difference in suicide rates between male and female across racial group?</p>
+<p>2. Is there a significant difference in suicide rates between male and female across racial group?</p>
+<p>3. What are the differences in suicide and drug overdose rates among various age groups?</p>
 <p>We will present background information, describe the methods used for analysis, summarize the collected data, and discuss our findings and their implications.</p>
 </section>
 <section id="methodology" class="level2">
@@ -200,6 +200,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="exploratory-data-analysis-eda-for-resesarch-question-three" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda-for-resesarch-question-three">Exploratory Data Analysis (EDA) for resesarch question three</h2>
+<p>How do Suicide and Drug overdose rates vary across different Age Groups?</p>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data Preparation</h3>
+<p>This research question examines the disparities in suicide and drug overdose rates among various age groups. By focusing on age as a demographic factor, this analysis seeks to uncover patterns and trends that indicate which age groups are most at risk for either suicide or drug overdoses. To address this, we merged two datasets, each detailing mortality rates for suicides and drug overdoses, and analyzed their attributes across distinct age groups.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The trends revealed in the bar chart emphasize the need for a thoughtful and targeted approach to addressing the intertwined challenges of suicide and drug overdose rates across different age groups. The data tells a story that is both sobering and illuminating, underscoring the unique vulnerabilities and stressors that individuals face at different stages of life. By understanding these nuances, we can design interventions that meet people where they are and provide the support they need.</p>
+<p>For young adults in the <strong>15–24 years</strong> age group, the relatively low suicide rates offer a glimmer of hope, suggesting that protective factors such as community support and family connections might be playing a role. However, their drug overdose rates, while not the lowest, are a cause for concern. This highlights the importance of proactive efforts to educate young people about the risks of substance abuse while fostering environments that encourage open conversations about mental health. Programs in schools and universities that focus on peer support, resilience-building, and accessible mental health counseling could be instrumental in addressing these challenges before they escalate.</p>
+<p>The <strong>25–34 years</strong> age group emerges as the most vulnerable demographic for drug overdoses, with rates peaking during this phase of life. This stage is often defined by major transitions—starting careers, forming relationships, and navigating financial independence. For some, these pressures can lead to substance use as a coping mechanism. To address this, it’s critical to create systems of support that reduce stigma and provide tangible resources. Workplace mental health programs, affordable treatment options, and community-based initiatives could go a long way in alleviating the burden faced by young adults during these formative years.</p>
+<p>When it comes to suicide rates, the <strong>45–54 years</strong> age group faces the highest risk of any demographic. This period of life is often marked by mid-life pressures such as financial strain, career stagnation, and caregiving responsibilities, all of which can weigh heavily on mental health. For individuals in this age group, interventions that focus on stress management and relief from caregiving burdens are essential. Employers can play a pivotal role by providing robust mental health benefits, while community organizations could create support groups tailored to the needs of this demographic. Addressing these pressures holistically can help reduce the risk of suicide during this critical stage.</p>
+<p>Interestingly, the <strong>65–74 years</strong> age group stands out as the cohort with the lowest rates of drug overdoses and relatively low suicide rates. This stability suggests that this group may benefit from a unique combination of protective factors—perhaps a sense of financial security, established social networks, or fewer life transitions compared to younger or older groups. Studying these factors further could help identify strategies to build resilience in other demographics. However, even this group is not immune, and efforts to maintain their well-being through continued access to health care and social engagement remain vital.</p>
+<p>A stark contrast is seen in the <strong>85 years and older</strong> age group, where suicide rates spike once again. This secondary peak tells a poignant story of the challenges associated with aging: isolation, declining health, and grief from losing loved ones. To combat these issues, targeted interventions must focus on increasing social connections for elderly individuals, offering grief counseling, and ensuring mental health care is readily accessible. Programs that facilitate intergenerational engagement, community activities, and in-home support can help reduce the feelings of loneliness and despair that are so common in this demographic.</p>
+<p>Across all age groups, one consistent trend stands out: suicide rates surpass drug overdose rates. This underscores the pervasive nature of mental health struggles across the lifespan, even in populations where substance use is a pressing issue. Younger adults may face higher overdose risks, but the concern for suicide remains equally urgent. For older populations, drug overdoses become nearly absent, but the mental health toll of aging takes center stage.</p>
+<p>These insights highlight the need for a life-course approach to public health interventions. Each age group faces its own set of challenges, shaped by the unique social, economic, and psychological factors at play during their stage of life. By investing in tailored, age-specific programs, we can address these challenges head-on and create a society that prioritizes mental health and well-being. Whether it’s fostering resilience in young adults, providing stress relief for middle-aged individuals, or supporting the elderly through compassionate care, this data reminds us that prevention and support are always possible. Together, we can reduce the toll of these preventable tragedies and ensure a healthier, more hopeful future for all.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code will run, but the code and its output will be hidden.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -343,8 +367,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">cex.axis =</span> <span class="fl">0.8</span>)        <span class="co"># Reduce axis text size</span></span>
 <span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Plot Tukey HSD results</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tukey_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tukey_results)</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize: Bar Chart Comparing Suicide and Overdose Rates</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>age_summary <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>  suicide_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Age_Group) <span class="sc">%&gt;%</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">Avg_Suicide_Rate =</span> <span class="fu">mean</span>(Suicide_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean <span class="sc">%&gt;%</span> </span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Age_Group) <span class="sc">%&gt;%</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">Avg_Overdose_Rate =</span> <span class="fu">mean</span>(Overdose_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">"Age_Group"</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data for plotting</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>age_summary_long <span class="ot">&lt;-</span> age_summary <span class="sc">%&gt;%</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(Avg_Suicide_Rate, Avg_Overdose_Rate),</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Rate_Type"</span>,</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Rate"</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar chart</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_summary_long, <span class="fu">aes</span>(<span class="at">x =</span> Age_Group, <span class="at">y =</span> Rate, <span class="at">fill =</span> Rate_Type)) <span class="sc">+</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Comparison of Suicide and Drug Overdose Rates Across Different Age Groups"</span>,</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rate (Per 100,000 Residents)"</span>,</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Rate Type"</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Required Libraries</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Datasets</span></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>suicide_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://data.cdc.gov/api/views/95ax-ymtc/rows.csv?accessType=DOWNLOAD"</span>)</span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>drug_overdose_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://data.cdc.gov/api/views/9j2v-jamp/rows.csv?accessType=DOWNLOAD"</span>)</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the Suicide Dataset</span></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, <span class="at">Age_Group =</span> AGE, <span class="at">Year =</span> YEAR, <span class="at">Suicide_Rate =</span> ESTIMATE) <span class="sc">%&gt;%</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">==</span> <span class="st">"All persons"</span>, <span class="sc">!</span><span class="fu">is.na</span>(Suicide_Rate))</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the Drug Overdose Dataset</span></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, <span class="at">Age_Group =</span> AGE, <span class="at">Year =</span> YEAR, <span class="at">Overdose_Rate =</span> ESTIMATE) <span class="sc">%&gt;%</span></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">==</span> <span class="st">"All persons"</span>, <span class="sc">!</span><span class="fu">is.na</span>(Overdose_Rate))</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the Datasets by Age Group and Year</span></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>  suicide_clean,</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean,</span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Age_Group"</span>, <span class="st">"Year"</span>),</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 </section>
 
 </main>
