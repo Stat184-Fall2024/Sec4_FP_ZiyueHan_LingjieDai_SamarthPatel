@@ -4,10 +4,28 @@ format: html
 editor: visual
 ---
 
-### Research Question 2: Comparison of Suicide and Drug Overdose Rates Across different Age Groups
-This question explores the differences in suicide and drug overdose rates across age groups to highlight which ages are most affected. By understanding these patterns, this helps identify where to direct efforts and resources to provide the most effective support for those in need.
+---
+title: "Stat 184 Project"
+format: html
+editor: visual
+---
 
-# Libraries
+Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
+Running Code
+
+When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+{r}
+1 + 1
+
+You can add options to executable code like this
+
+{r}
+#| echo: false
+# Load Required Libraries
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -49,7 +67,7 @@ merged_data <- merge(
   all = FALSE
 )
 
-# Summarize Data: Average Rates Across Age Groups
+# Summarize Data: Average Rates Across Different Age Groups
 age_summary <- merged_data %>%
   group_by(Age_Group) %>%
   summarize(
@@ -61,6 +79,12 @@ age_summary <- merged_data %>%
 kable(age_summary, col.names = c("Age Group", "Average Suicide Rate", "Average Overdose Rate"), 
       caption = "Average Suicide and Overdose Rates Across Age Groups")
 
+
+
+
+The echo: false option disables the printing of code (only output is displayed).
+
+{r}
 # Visualize: Bar Chart Comparing Suicide and Overdose Rates
 age_summary_long <- age_summary %>%
   pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
