@@ -1,5 +1,6 @@
 ---
 title: "Exploring Suicide and Drug Overdose Rates Across Different Population Groups"
+subtitle: "Stat 184"
 author: "Ziyue Han, Lingjie Dai, Samarth Patel"
 date: "Dec. 13, 2024"
 date-modified: now
@@ -25,7 +26,13 @@ execute:
 
 Health disparities, particularly those concerning mental health and substance abuse, are among the most critical challenges facing public health systems. Suicide and drug overdoses are leading causes of death in the United States, and their prevalence differs across demographic groups. Examining these disparities provides insights into the populations most at risk and highlights areas for intervention.
 
-This report investigates three research questions regarding suicide and drug overdose rates: 1. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose? 2. How do drug overdose rates vary by age within each racial demographic group? 3. Is there a correlation between suicide rates and drug overdose rates in different racial demographic groups?
+This report investigates three research questions regarding suicide and drug overdose rates:
+
+1\. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
+
+2\. What are the differences in suicide and drug overdose rates among various age groups?
+
+3\. Is there a significant difference in suicide rates between male and female across racial group?
 
 We will present background information, describe the methods used for analysis, summarize the collected data, and discuss our findings and their implications.
 
@@ -41,7 +48,11 @@ Our analysis focuses on five key attributes: Gender, Age, Race, Suicide Rate, an
 
 ### Analytical Approach
 
-To address the research questions, we will use descriptive statistics to summarize suicide and overdose rates across demographic groups, visualization (e.g., histograms, boxplots) to explore patterns and disparities, and correlation analysis to evaluate potential relationships between suicide and drug overdose rates.
+To address the research questions, we used descriptive statistics to summarize suicide and overdose rates across demographic groups, visualization (e.g., bar chart, heatmap) to explore patterns and disparities, and correlation analysis to evaluate potential relationships between suicide and drug overdose rates.
+
+## FAIR Principle 
+
+The datasets used in this study follow the FAIR principles, meaning they are findable, accessible, interoperable, and reusable. They are easy to find on Data.gov, a platform that organizes and shares public data. The data can be downloaded in simple formats like CSV, which works with most tools for analysis. It also includes clear information about how the data was collected and structured, making it easier for others to use and build on. Following these principles ensures the data is easy to understand, share, and use for future research.
 
 ## Data Exploration
 
