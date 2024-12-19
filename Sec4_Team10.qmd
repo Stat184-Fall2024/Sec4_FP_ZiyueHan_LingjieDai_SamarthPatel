@@ -270,6 +270,7 @@ age_summary <- merge(
   by = "Age_Group"
 )
 
+
 # Reshape data for plotting
 age_summary_long <- age_summary %>%
   pivot_longer(
