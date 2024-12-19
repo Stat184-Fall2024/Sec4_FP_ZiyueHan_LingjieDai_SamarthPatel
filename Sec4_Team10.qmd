@@ -1,16 +1,43 @@
 ---
-title: "Factors That Affect Student Performance In Exams"
-author: "Mutkallam Warraich and Jackie Yang"
-format: pdf
+title: "Suicide and drug overdose rates analyze"
+author: "Group 10 "
+format: html
 date: today
-self-contained: true
-toc: true
-echo: false
-theme:
-  dark: darkly
 ---
 
-## Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
+## Introduction
+
+Health disparities, particularly those concerning mental health and substance abuse, are among the most critical challenges facing public health systems. Suicide and drug overdoses are leading causes of death in the United States, and their prevalence differs across demographic groups. Examining these disparities provides insights into the populations most at risk and highlights areas for intervention.
+
+This report investigates three research questions regarding suicide and drug overdose rates:
+
+1\. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
+
+2\. What are the differences in suicide and drug overdose rates among various age groups?
+
+3\. Is there a significant difference in suicide rates between male and female across racial group?
+
+We will present background information, describe the methods used for analysis, summarize the collected data, and discuss our findings and their implications.
+
+## Methodology
+
+### Data Provenance
+
+The datasets used in this research were found from Data.gov, the U.S. government's open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were provided by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected. These datasets are aligned with FAIR principles—they are findable, accessible, interoperable, and reusable—and provide the foundation for demographic analyses.
+
+### Attributes for Analysis
+
+Our analysis focuses on five key attributes: Gender, Age, Race, Suicide Rate, and Overdose Rate. These attributes were chosen as they provide a clear and measurable framework to investigate disparities in public health outcomes. Gender and Race are essential demographic indicators that help identify populations at risk based on societal and systemic factors. Age allows us to assess how vulnerabilities change across different life stages, such as adolescence, middle adulthood, and elderly years. Suicide_Rate and Overdose_Rate are expressed as deaths per 100,000 individuals, offering a standardized metric for comparison across groups. Together, these attributes allow for a multidimensional analysis, capturing the complexity of health disparities and enabling targeted recommendations for intervention.
+
+### Analytical Approach
+
+To answer the research questions, we used different methods to analyze the data. For visual patterns and comparisons, we created charts like bar graphs and heatmaps to show the differences in suicide and overdose rates across groups. For the third research question—examining differences in suicide rates between males and females across racial groups—we performed a correlation and significance test to see if the differences are statistically meaningful. This approach helps us understand which groups are most affected and how these issues vary by demographic factors.
+
+## FAIR Principle
+
+The datasets used in this study follow the FAIR principles, which make them easy to find, use, and share. They are available on Data.gov, a platform that organizes data with clear titles and descriptions so anyone can search for and access them. The data can be downloaded in formats like CSV, which work with many tools like Excel, R, and Python. It is also structured consistently, making it easy to combine with other datasets or use for different kinds of analysis. Detailed information about the data, including how it was collected and its limitations, is provided, ensuring that others can understand and reuse it for their own research. Following these principles helps ensure the data is clear, accessible, and useful for future studies.
+
+
 ```{r include=FALSE}
 # This code will run, but the code and its output will be hidden.
 library(dplyr)
@@ -107,6 +134,9 @@ write.csv(
 ```
 
 ## Exploratory Data Analysis (EDA) for resesarch question one
+Suicide is a complex and deeply personal tragedy, but for some groups, the burden is disproportionately heavy. Among American Indian or Alaska Native males, suicide rates are the highest of any racial or gender group, even exceeding those of White males, who also face alarmingly high rates. This stark reality points to deeply rooted issues such as intergenerational trauma, marginalization, and socio-economic hardships that have plagued these communities for generations. The gender disparity in suicide rates is clear, with males across all racial groups more likely to take their own lives. However, American Indian or Alaska Native females also face significant struggles, with suicide rates higher than females in any other racial category. In contrast, Asian or Pacific Islander males and females show the lowest suicide rates, suggesting the potential influence of cultural or community-based protective factors.
+These numbers tell a story that demands attention and action. The high suicide rates among American Indian or Alaska Native males highlight a desperate need for targeted mental health support and culturally sensitive interventions. Many of these individuals live in rural or tribal areas where access to mental health care is severely limited, and systemic barriers only deepen the divide. Efforts to support American Indian or Alaska Native females must also address the stigma surrounding mental health, improve community resources, and tackle the socio-economic challenges that disproportionately affect these populations. To fully understand and address these disparities, further research is needed to explore the role of historical trauma, substance abuse, and systemic inequities in healthcare access.
+The path forward requires empathy, collaboration, and commitment. Engaging directly with tribal communities to develop mental health programs that honor cultural values and traditions can make these interventions more effective. Advocacy for increased funding is crucial to ensure that mental health services reach those most in need, with a focus on both prevention and treatment. Public health campaigns can play a vital role in raising awareness and reducing stigma, particularly among at-risk groups such as American Indian or Alaska Native males. Addressing this issue is not just a matter of statistics—it is a moral imperative to create a society where everyone, regardless of their background, has the support they need to lead a life of hope and purpose.
 
 ```{r}
 #| echo: false
@@ -130,7 +160,10 @@ ggplot(data = merged_data, aes(x = Race, y = Suicide_Rate, fill = Gender)) +
   )
 ```
 
+To gain further clarity, a heatmap of suicide and overdose rates by race and gender reveals additional disparities. The darkest shades on the heatmap, representing the highest rates, are concentrated among American Indian or Alaska Native males for suicide and among White males for overdose. This visualization reinforces earlier findings that these groups bear the brunt of these crises.
+For females, American Indian or Alaska Native women show the highest suicide rates, while White females exhibit higher overdose rates compared to other female groups. Asian or Pacific Islander individuals, consistent with previous observations, show the lightest shades, indicating the lowest rates for both suicide and overdose. The gender disparity persists across all racial groups, with males consistently reporting higher rates than females for both outcomes.
 
+The heatmap also underscores the compounded vulnerabilities faced by American Indian or Alaska Native communities, where both males and females face disproportionately high suicide rates. These findings point to the devastating impacts of systemic inequities, historical trauma, and marginalization. Similarly, the elevated overdose rates among White individuals highlight the significant role of substance use disorders in this demographic.
 ```{r}
 #| echo: false
 ## Image 2 for Question 1
@@ -163,42 +196,19 @@ ggplot(data = merged_data_long, aes(x = Race, y = Gender, fill = Rate)) +
     y = "Gender"
   )
 ```
-This approach allowed me to analyze the data in detail, test the hypotheses, and determine whether differences in suicide rates were significantly influenced by ethnic, gender, or a combination of these factors. The data, which were unequivocal and supported the rejection of the null hypothesis, showed that there are significant differences across gender, race, and their combinations. The alternative hypothesis (H₁) states that there are significant differences in suicide rates, suggesting that factors such as gender, race, or both influence the rates displayed in the data. If at least one group shows a substantial deviation, indicating a relationship between the observed suicide rates and gender, race, or their interaction, the null hypothesis would be rejected. 
-
-```{r}
-#| echo: false
-## Image 3 for Question 1
-# Summarize the data by Race and Gender
-summary_table <- merged_data %>%
-  group_by(Race, Gender) %>%
-  summarise(
-    Avg_Suicide_Rate = mean(Suicide_Rate, na.rm = TRUE),
-    Avg_Overdose_Rate = mean(Overdose_Rate, na.rm = TRUE)
-  )
-
-# Display the summary table
-library(knitr)
-kable(summary_table, 
-      col.names = c("Race", "Gender", "Average Suicide Rate", "Average Overdose Rate"),
-      caption = "Summary Table of Average Suicide and Overdose Rates by Race and Gender")
-```
+The combined insights from the bar chart and heatmap underscore the urgency of addressing the intertwined crises of suicide and overdose. The disparities highlighted across racial and gender lines demand comprehensive, targeted interventions. Public health strategies must prioritize culturally sensitive approaches that address the unique challenges faced by vulnerable groups like American Indian or Alaska Native and White individuals. Furthermore, gender-specific programs that integrate mental health care with substance use treatment can help mitigate the dual impact of these crises. Understanding these patterns is not just about analyzing data—it is about crafting effective solutions that provide hope and healing to those most in need. By addressing both prevention and treatment, society can take meaningful steps toward reducing the devastating toll of suicide and overdose on individuals, families, and communities.
 
 ## Exploratory Data Analysis (EDA) for resesarch question two
 
 The second research question, based on my topic, is: “Is there a significant difference in suicide rates between males and females across racial groups?” To answer this question, I analyzed the data in detail, tested the hypotheses, and determined whether differences in suicide rates were significantly influenced by ethnicity, gender, or their combination. The approach used ensured a thorough examination of the data, producing results that addressed the research question with confidence.
+
 To begin, I claim the two hypotheses to guide the test. The null hypothesis (H₀) assumed that there are no significant differences in suicide rates across gender-race combinations, meaning that any observed differences are purely random and there is no meanful. Conversely, the alternative hypothesis (H₁) stated that there are significant differences in suicide rates across these groups. This hypothesis suggested that certain gender-race combinations might be more vulnerable than others, indicating a relationship between the observed suicide rates and the combination of gender and race. If at least one group showed a substantial deviation, this would provide evidence to reject the null hypothesis in favor of the alternative hypothesis.
 
-The data analysis began with thorough cleaning and organization. I started by assigning meaningful names to each group and removing irrelevant or incomplete data that was not applicable to this research question. Once cleaned, the dataset was categorized into three primary components: gender (male and female), race (White, Black or African American, American Indian or Alaska Native, and Asian or Pacific Islander), and a gender-race combination variable. This categorization was crucial as it allowed for a detailed examination of both the independent effects of gender and race, as well as their interaction. For example, while males overall might have higher suicide rates, interaction analysis could reveal that certain racial groups within males, such as American Indian or Alaska Native males, show significantly higher rates than others. This organization ensured the analysis was as thorough as possible and that no critical trends were overlooked.And below was a my analyzed clean table.
-
-```{r}
-#| warning: false 
-#| fig-cap: "Figure 1: Clean database "
-```
-
+The data analysis began with thorough cleaning and organization. I started by assigning meaningful names to each group and removing irrelevant or incomplete data that was not applicable to this research question. Once cleaned, the dataset was categorized into three primary components: gender (male and female), race (White, Black or African American, American Indian or Alaska Native, and Asian or Pacific Islander), and a gender-race combination variable. This categorization was crucial as it allowed for a detailed examination of both the independent effects of gender and race, as well as their interaction. For example, while males overall might have higher suicide rates, interaction analysis could reveal that certain racial groups within males, such as American Indian or Alaska Native males, show significantly higher rates than others. This organization ensured the analysis was as thorough as possible and that no critical trends were overlooked.And all the graph output was below the analyze because it was run out in one combine graph.
 
 Once the data was ready, I performed a Two-Way ANOVA (Analysis of Variance) to determine whether the mean suicide rates differed significantly by race, gender, and their interaction. The Two-Way ANOVA is a statistical test designed to assess the effects of two independent variables—gender and race in this case—on one dependent variable, the suicide rates. The test addressed two primary questions: (1) whether race and gender individually influence suicide rates (main effects), and (2) whether the combination of gender and race creates unique patterns that cannot be explained by their individual effects (interaction effect). For instance, the main effect might show that males have higher suicide rates than females, while the interaction effect could reveal that White males or American Indian or Alaska Native males are particularly vulnerable compared to other groups.
 
-The results from the Two-Way ANOVA provided the first answer to my research question by confirming that there were significant differences in suicide rates between groups. However, while the ANOVA identified the presence of significant differences, it could not pinpoint which specific groups were different. To address this limitation, I used a Tukey HSD (Honestly Significant Difference) post-hoc test, a statistical method designed to compare the means of multiple groups while controlling for Type I error (the risk of incorrectly identifying a significant difference due to random chance). The Tukey HSD test builds confidence intervals for each pairwise comparison between groups. If a confidence interval does not include zero, it confirms that the difference between the two groups is statistically significant. For example, a confidence interval of [2.5, 7.0] for the difference in suicide rates between males and females means the true difference lies between 2.5 and 7.0, and since zero is not included, the difference is substantial.
+The results from the Two-Way ANOVA provided the first answer to my research question by confirming that there were significant differences in suicide rates between groups. However, while the ANOVA identified the presence of significant differences, it could not pinpoint which specific groups were different. To address this limitation, I used a Tukey HSD (Honestly Significant Difference) post-hoc test, a statistical method designed to compare the means of multiple groups while controlling for Type I error (the risk of incorrectly identifying a significant difference due to random chance). The Tukey HSD test builds confidence intervals for each pairwise comparison between groups. If a confidence interval does not include zero, it confirms that the difference between the two groups is statistically significant. For example, a confidence interval of [2.5, 7.0] for the difference in suicide rates between males and females means the true difference lies between 2.5 and 7.0, and since zero is not included, the difference is substantial.The data is below these analyze.
 
 The Tukey HSD test results provided detailed insights. First, in terms of gender, the findings showed that males consistently had significantly higher suicide rates than females. This conclusion was strongly supported by the confidence intervals, which were all positive and excluded zero, indicating that the difference was unlikely to be random. Next, the analysis turned to racial groups, revealing significant patterns. For instance, Asian or Pacific Islanders had the lowest overall suicide rates, while American Indian or Alaska Native individuals had the highest rates of any racial group. These findings suggested that race alone plays a substantial role in influencing suicide rates.
 
@@ -207,13 +217,14 @@ In summary, the statistical analysis provided compelling evidence that gender, r
 
 
 
-```{r}
-#| echo: false
+```{r echo=FALSE, results='hide'}
+# Load necessary libraries
+library(dplyr)
+
 # Step 1: Load the dataset
 data <- read.csv("Cleaned_Combined_Death_Rates.csv")
 
 # Step 2: Clean the data
-# Select relevant columns and remove rows with missing values
 cleaned_data <- data %>%
   select(Gender, Race, Suicide_Rate) %>%
   na.omit()
@@ -222,18 +233,16 @@ cleaned_data <- data %>%
 # Test for differences in suicide rates between gender and racial groups
 anova_model <- aov(Suicide_Rate ~ Gender * Race, data = cleaned_data)
 
-# Step 5: Perform Post-hoc Tukey HSD test
+# Step 4: Perform post-hoc Tukey HSD test
 tukey_results <- TukeyHSD(anova_model)
-print("Tukey HSD Test Results:")
-print(tukey_results)
 
-# Step 6: Adjust graphical parameters for better margins and readability
-par(cex.axis = 0.6)        # Reduce axis text size
-par(las = 2)      # Rotate axis labels
+# Step 5: Adjust graphical parameters for better margins and readability
+par(mar = c(5, 18, 4, 2))   # Increase left margin for better label visibility
+par(las = 2)               # Rotate axis labels
+par(cex.axis = 0.8)        # Reduce axis text size
 
-par(mar = c(5, 8, 4, 2))  # Increase left margin for better label visibility
-plot(tukey_results, las = 2, cex.axis = 0.8)  # Rotate axis labels and adjust size
-# Step 7: Plot Tukey HSD results
+# Step 6: Plot Tukey HSD results
+plot(tukey_results)
 ```
 
 

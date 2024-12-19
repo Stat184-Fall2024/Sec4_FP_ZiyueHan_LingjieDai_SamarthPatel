@@ -197,6 +197,49 @@ overdose?}\label{clean-code-for-research-question-1which-gender-race-combination
 \subsection{Exploratory Data Analysis (EDA) for resesarch question
 one}\label{exploratory-data-analysis-eda-for-resesarch-question-one}
 
+Suicide is a complex and deeply personal tragedy, but for some groups,
+the burden is disproportionately heavy. Among American Indian or Alaska
+Native males, suicide rates are the highest of any racial or gender
+group, even exceeding those of White males, who also face alarmingly
+high rates. This stark reality points to deeply rooted issues such as
+intergenerational trauma, marginalization, and socio-economic hardships
+that have plagued these communities for generations. The gender
+disparity in suicide rates is clear, with males across all racial groups
+more likely to take their own lives. However, American Indian or Alaska
+Native females also face significant struggles, with suicide rates
+higher than females in any other racial category. In contrast, Asian or
+Pacific Islander males and females show the lowest suicide rates,
+suggesting the potential influence of cultural or community-based
+protective factors. These numbers tell a story that demands attention
+and action. The high suicide rates among American Indian or Alaska
+Native males highlight a desperate need for targeted mental health
+support and culturally sensitive interventions. Many of these
+individuals live in rural or tribal areas where access to mental health
+care is severely limited, and systemic barriers only deepen the divide.
+Efforts to support American Indian or Alaska Native females must also
+address the stigma surrounding mental health, improve community
+resources, and tackle the socio-economic challenges that
+disproportionately affect these populations. To fully understand and
+address these disparities, further research is needed to explore the
+role of historical trauma, substance abuse, and systemic inequities in
+healthcare access. The path forward requires empathy, collaboration, and
+commitment. Engaging directly with tribal communities to develop mental
+health programs that honor cultural values and traditions can make these
+interventions more effective. Advocacy for increased funding is crucial
+to ensure that mental health services reach those most in need, with a
+focus on both prevention and treatment. Public health campaigns can play
+a vital role in raising awareness and reducing stigma, particularly
+among at-risk groups such as American Indian or Alaska Native males.
+Addressing this issue is not just a matter of statistics---it is a moral
+imperative to create a society where everyone, regardless of their
+background, has the support they need to lead a life of hope and
+purpose.
+
+\begin{verbatim}
+Warning: Removed 1600 rows containing missing values or values outside the scale range
+(`geom_bar()`).
+\end{verbatim}
+
 \begin{figure}[H]
 
 {\centering \includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-7-1.pdf}
@@ -260,14 +303,14 @@ Average Overdose Rate
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-American Indian or Alaska Native & Female & 6.582609 & 5.7458333 \\
-American Indian or Alaska Native & Male & 22.220652 & 7.9946341 \\
-Asian or Pacific Islander & Female & 3.407500 & 0.7960784 \\
-Asian or Pacific Islander & Male & 8.762500 & 1.3919118 \\
-Black or African American & Female & 2.263830 & 2.5464029 \\
-Black or African American & Male & 9.894444 & 5.8938433 \\
-White & Female & 6.250000 & 4.2420290 \\
-White & Male & 23.593478 & 8.0163043 \\
+American Indian or Alaska Native & Female & 5.7458333 & 6.582609 \\
+American Indian or Alaska Native & Male & 7.9946341 & 22.220652 \\
+Asian or Pacific Islander & Female & 0.7960784 & 3.407500 \\
+Asian or Pacific Islander & Male & 1.3919118 & 8.762500 \\
+Black or African American & Female & 2.5464029 & 2.263830 \\
+Black or African American & Male & 5.8938433 & 9.894444 \\
+White & Female & 4.2420290 & 6.250000 \\
+White & Male & 8.0163043 & 23.593478 \\
 \end{longtable}
 
 \subsection{Exploratory Data Analysis (EDA) for resesarch question
@@ -306,7 +349,7 @@ interaction analysis could reveal that certain racial groups within
 males, such as American Indian or Alaska Native males, show
 significantly higher rates than others. This organization ensured the
 analysis was as thorough as possible and that no critical trends were
-overlooked.And below was a my analyzed clean table.
+overlooked.And the graph is below these analyze.
 
 Once the data was ready, I performed a Two-Way ANOVA (Analysis of
 Variance) to determine whether the mean suicide rates differed
@@ -337,7 +380,7 @@ difference between the two groups is statistically significant. For
 example, a confidence interval of {[}2.5, 7.0{]} for the difference in
 suicide rates between males and females means the true difference lies
 between 2.5 and 7.0, and since zero is not included, the difference is
-substantial.
+substantial.The data is below these analyze.
 
 The Tukey HSD test results provided detailed insights. First, in terms
 of gender, the findings showed that males consistently had significantly
@@ -386,163 +429,156 @@ Fit: aov(formula = Suicide_Rate ~ Gender * Race, data = cleaned_data)
 
 $Gender
                 diff      lwr      upr p adj
-Male-Female 12.33521 12.20627 12.46415     0
+Male-Female 2.610971 2.317083 2.904859     0
 
 $Race
-                                                                  diff
-Asian or Pacific Islander-American Indian or Alaska Native -8.31663043
-Black or African American-American Indian or Alaska Native -8.27135642
-White-American Indian or Alaska Native                      0.52010870
-Black or African American-Asian or Pacific Islander         0.04527401
-White-Asian or Pacific Islander                             8.83673913
-White-Black or African American                             8.79146512
-                                                                  lwr
-Asian or Pacific Islander-American Indian or Alaska Native -8.5440960
-Black or African American-American Indian or Alaska Native -8.5400499
-White-American Indian or Alaska Native                      0.3007214
-Black or African American-Asian or Pacific Islander        -0.2300549
-White-Asian or Pacific Islander                             8.6092735
-White-Black or African American                             8.5227717
+                                                                 diff       lwr
+Asian or Pacific Islander-American Indian or Alaska Native -5.9142473 -6.517373
+Black or African American-American Indian or Alaska Native -2.6509251 -3.229375
+White-American Indian or Alaska Native                     -0.7351373 -1.219280
+Black or African American-Asian or Pacific Islander         3.2633222  2.610875
+White-Asian or Pacific Islander                             5.1791100  4.608604
+White-Black or African American                             1.9157878  1.371435
                                                                   upr     p adj
-Asian or Pacific Islander-American Indian or Alaska Native -8.0891649 0.0000000
-Black or African American-American Indian or Alaska Native -8.0026630 0.0000000
-White-American Indian or Alaska Native                      0.7394960 0.0000000
-Black or African American-Asian or Pacific Islander         0.3206029 0.9746449
-White-Asian or Pacific Islander                             9.0642047 0.0000000
-White-Black or African American                             9.0601586 0.0000000
+Asian or Pacific Islander-American Indian or Alaska Native -5.3111217 0.0000000
+Black or African American-American Indian or Alaska Native -2.0724756 0.0000000
+White-American Indian or Alaska Native                     -0.2509951 0.0005586
+Black or African American-Asian or Pacific Islander         3.9157692 0.0000000
+White-Asian or Pacific Islander                             5.7496159 0.0000000
+White-Black or African American                             2.4601410 0.0000000
 
 $`Gender:Race`
-                                                                                     diff
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  15.6380435
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -3.1751087
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          2.1798913
-Female:Black or African American-Female:American Indian or Alaska Native       -4.3187789
-Male:Black or African American-Female:American Indian or Alaska Native          3.3118357
-Female:White-Female:American Indian or Alaska Native                           -0.3326087
-Male:White-Female:American Indian or Alaska Native                             17.0108696
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -18.8131522
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.4581522
-Female:Black or African American-Male:American Indian or Alaska Native        -19.9568224
-Male:Black or African American-Male:American Indian or Alaska Native          -12.3262077
-Female:White-Male:American Indian or Alaska Native                            -15.9706522
-Male:White-Male:American Indian or Alaska Native                                1.3728261
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 5.3550000
-Female:Black or African American-Female:Asian or Pacific Islander              -1.1436702
-Male:Black or African American-Female:Asian or Pacific Islander                 6.4869444
-Female:White-Female:Asian or Pacific Islander                                   2.8425000
-Male:White-Female:Asian or Pacific Islander                                    20.1859783
-Female:Black or African American-Male:Asian or Pacific Islander                -6.4986702
-Male:Black or African American-Male:Asian or Pacific Islander                   1.1319444
-Female:White-Male:Asian or Pacific Islander                                    -2.5125000
-Male:White-Male:Asian or Pacific Islander                                      14.8309783
-Male:Black or African American-Female:Black or African American                 7.6306147
-Female:White-Female:Black or African American                                   3.9861702
-Male:White-Female:Black or African American                                    21.3296485
-Female:White-Male:Black or African American                                    -3.6444444
-Male:White-Male:Black or African American                                      13.6990338
-Male:White-Female:White                                                        17.3434783
-                                                                                      lwr
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  15.2719840
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -3.5546472
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          1.8003528
-Female:Black or African American-Female:American Indian or Alaska Native       -4.7639174
-Male:Black or African American-Female:American Indian or Alaska Native          2.8601975
-Female:White-Female:American Indian or Alaska Native                           -0.6986682
-Male:White-Female:American Indian or Alaska Native                             16.6448101
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -19.1926907
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.8376907
-Female:Black or African American-Male:American Indian or Alaska Native        -20.4019609
-Male:Black or African American-Male:American Indian or Alaska Native          -12.7778459
-Female:White-Male:American Indian or Alaska Native                            -16.3367117
-Male:White-Male:American Indian or Alaska Native                                1.0067666
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 4.9624449
-Female:Black or African American-Female:Asian or Pacific Islander              -1.5999576
-Male:Black or African American-Female:Asian or Pacific Islander                 6.0243139
-Female:White-Female:Asian or Pacific Islander                                   2.4629615
-Male:White-Female:Asian or Pacific Islander                                    19.8064397
-Female:Black or African American-Male:Asian or Pacific Islander                -6.9549576
-Male:Black or African American-Male:Asian or Pacific Islander                   0.6693139
-Female:White-Male:Asian or Pacific Islander                                    -2.8920385
-Male:White-Male:Asian or Pacific Islander                                      14.4514397
-Male:Black or African American-Female:Black or African American                 7.1128060
-Female:White-Female:Black or African American                                   3.5410317
-Male:White-Female:Black or African American                                    20.8845100
-Female:White-Male:Black or African American                                    -4.0960827
-Male:White-Male:Black or African American                                      13.2473956
-Male:White-Female:White                                                        16.9774188
-                                                                                       upr
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  16.00410295
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -2.79557015
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          2.55942985
-Female:Black or African American-Female:American Indian or Alaska Native       -3.87364044
-Male:Black or African American-Female:American Indian or Alaska Native          3.76347396
-Female:White-Female:American Indian or Alaska Native                            0.03345078
-Male:White-Female:American Indian or Alaska Native                             17.37692904
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -18.43361363
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.07861363
-Female:Black or African American-Male:American Indian or Alaska Native        -19.51168392
-Male:Black or African American-Male:American Indian or Alaska Native          -11.87456951
-Female:White-Male:American Indian or Alaska Native                            -15.60459270
-Male:White-Male:American Indian or Alaska Native                                1.73888556
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 5.74755505
-Female:Black or African American-Female:Asian or Pacific Islander              -0.68738278
-Male:Black or African American-Female:Asian or Pacific Islander                 6.94957501
-Female:White-Female:Asian or Pacific Islander                                   3.22203854
-Male:White-Female:Asian or Pacific Islander                                    20.56551680
-Female:Black or African American-Male:Asian or Pacific Islander                -6.04238278
-Male:Black or African American-Male:Asian or Pacific Islander                   1.59457501
-Female:White-Male:Asian or Pacific Islander                                    -2.13296146
-Male:White-Male:Asian or Pacific Islander                                      15.21051680
-Male:Black or African American-Female:Black or African American                 8.14842330
-Female:White-Female:Black or African American                                   4.43130868
-Male:White-Female:Black or African American                                    21.77478694
-Female:White-Male:Black or African American                                    -3.19280623
-Male:White-Male:Black or African American                                      14.15067203
-Male:White-Female:White                                                        17.70953774
-                                                                                 p adj
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native 0.000000
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      0.000000
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        0.000000
-Female:Black or African American-Female:American Indian or Alaska Native      0.000000
-Male:Black or African American-Female:American Indian or Alaska Native        0.000000
-Female:White-Female:American Indian or Alaska Native                          0.106855
-Male:White-Female:American Indian or Alaska Native                            0.000000
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        0.000000
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          0.000000
-Female:Black or African American-Male:American Indian or Alaska Native        0.000000
-Male:Black or African American-Male:American Indian or Alaska Native          0.000000
-Female:White-Male:American Indian or Alaska Native                            0.000000
-Male:White-Male:American Indian or Alaska Native                              0.000000
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander               0.000000
-Female:Black or African American-Female:Asian or Pacific Islander             0.000000
-Male:Black or African American-Female:Asian or Pacific Islander               0.000000
-Female:White-Female:Asian or Pacific Islander                                 0.000000
-Male:White-Female:Asian or Pacific Islander                                   0.000000
-Female:Black or African American-Male:Asian or Pacific Islander               0.000000
-Male:Black or African American-Male:Asian or Pacific Islander                 0.000000
-Female:White-Male:Asian or Pacific Islander                                   0.000000
-Male:White-Male:Asian or Pacific Islander                                     0.000000
-Male:Black or African American-Female:Black or African American               0.000000
-Female:White-Female:Black or African American                                 0.000000
-Male:White-Female:Black or African American                                   0.000000
-Female:White-Male:Black or African American                                   0.000000
-Male:White-Male:Black or African American                                     0.000000
-Male:White-Female:White                                                       0.000000
+                                                                                    diff
+Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  2.2488008
+Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      -4.9497549
+Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        -4.3539216
+Female:Black or African American-Female:American Indian or Alaska Native      -3.1994305
+Male:Black or African American-Female:American Indian or Alaska Native         0.1480100
+Female:White-Female:American Indian or Alaska Native                          -1.5038043
+Male:White-Female:American Indian or Alaska Native                             2.2704710
+Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -7.1985557
+Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -6.6027224
+Female:Black or African American-Male:American Indian or Alaska Native        -5.4482313
+Male:Black or African American-Male:American Indian or Alaska Native          -2.1007909
+Female:White-Male:American Indian or Alaska Native                            -3.7526052
+Male:White-Male:American Indian or Alaska Native                               0.0216702
+Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                0.5958333
+Female:Black or African American-Female:Asian or Pacific Islander              1.7503244
+Male:Black or African American-Female:Asian or Pacific Islander                5.0977649
+Female:White-Female:Asian or Pacific Islander                                  3.4459506
+Male:White-Female:Asian or Pacific Islander                                    7.2202259
+Female:Black or African American-Male:Asian or Pacific Islander                1.1544911
+Male:Black or African American-Male:Asian or Pacific Islander                  4.5019315
+Female:White-Male:Asian or Pacific Islander                                    2.8501172
+Male:White-Male:Asian or Pacific Islander                                      6.6243926
+Male:Black or African American-Female:Black or African American                3.3474404
+Female:White-Female:Black or African American                                  1.6956261
+Male:White-Female:Black or African American                                    5.4699015
+Female:White-Male:Black or African American                                   -1.6518143
+Male:White-Male:Black or African American                                      2.1224611
+Male:White-Female:White                                                        3.7742754
+                                                                                     lwr
+Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  1.3770252
+Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      -6.0133099
+Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        -5.3267894
+Female:Black or African American-Female:American Indian or Alaska Native      -4.1661332
+Male:Black or African American-Female:American Indian or Alaska Native        -0.8290985
+Female:White-Female:American Indian or Alaska Native                          -2.3195500
+Male:White-Female:American Indian or Alaska Native                             1.4547254
+Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -8.2503460
+Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -7.5627148
+Female:Black or African American-Male:American Indian or Alaska Native        -6.4019754
+Male:Black or African American-Male:American Indian or Alaska Native          -3.0650805
+Female:White-Male:American Indian or Alaska Native                            -4.5529517
+Male:White-Male:American Indian or Alaska Native                              -0.7786763
+Male:Asian or Pacific Islander-Female:Asian or Pacific Islander               -0.5411548
+Female:Black or African American-Female:Asian or Pacific Islander              0.6186070
+Male:Black or African American-Female:Asian or Pacific Islander                3.9571461
+Female:White-Female:Asian or Pacific Islander                                  2.4401120
+Male:White-Female:Asian or Pacific Islander                                    6.2143874
+Female:Black or African American-Male:Asian or Pacific Islander                0.1075398
+Male:Black or African American-Male:Asian or Pacific Islander                  3.4453646
+Female:White-Male:Asian or Pacific Islander                                    1.9407033
+Male:White-Male:Asian or Pacific Islander                                      5.7149787
+Male:Black or African American-Female:Black or African American                2.2965474
+Female:White-Female:Black or African American                                  0.7928104
+Male:White-Female:Black or African American                                    4.5670858
+Female:White-Male:Black or African American                                   -2.5657633
+Male:White-Male:Black or African American                                      1.2085120
+Male:White-Female:White                                                        3.0353553
+                                                                                     upr
+Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  3.1205764
+Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      -3.8861999
+Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        -3.3810537
+Female:Black or African American-Female:American Indian or Alaska Native      -2.2327277
+Male:Black or African American-Female:American Indian or Alaska Native         1.1251184
+Female:White-Female:American Indian or Alaska Native                          -0.6880587
+Male:White-Female:American Indian or Alaska Native                             3.0862167
+Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -6.1467654
+Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -5.6427300
+Female:Black or African American-Male:American Indian or Alaska Native        -4.4944871
+Male:Black or African American-Male:American Indian or Alaska Native          -1.1365012
+Female:White-Male:American Indian or Alaska Native                            -2.9522586
+Male:White-Male:American Indian or Alaska Native                               0.8220167
+Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                1.7328215
+Female:Black or African American-Female:Asian or Pacific Islander              2.8820419
+Male:Black or African American-Female:Asian or Pacific Islander                6.2383836
+Female:White-Female:Asian or Pacific Islander                                  4.4517891
+Male:White-Female:Asian or Pacific Islander                                    8.2260644
+Female:Black or African American-Male:Asian or Pacific Islander                2.2014424
+Male:Black or African American-Male:Asian or Pacific Islander                  5.5584985
+Female:White-Male:Asian or Pacific Islander                                    3.7595312
+Male:White-Male:Asian or Pacific Islander                                      7.5338065
+Male:Black or African American-Female:Black or African American                4.3983334
+Female:White-Female:Black or African American                                  2.5984418
+Male:White-Female:Black or African American                                    6.3727172
+Female:White-Male:Black or African American                                   -0.7378653
+Male:White-Male:Black or African American                                      3.0364101
+Male:White-Female:White                                                        4.5131954
+                                                                                  p adj
+Male:American Indian or Alaska Native-Female:American Indian or Alaska Native 0.0000000
+Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      0.0000000
+Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        0.0000000
+Female:Black or African American-Female:American Indian or Alaska Native      0.0000000
+Male:Black or African American-Female:American Indian or Alaska Native        0.9998093
+Female:White-Female:American Indian or Alaska Native                          0.0000007
+Male:White-Female:American Indian or Alaska Native                            0.0000000
+Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        0.0000000
+Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          0.0000000
+Female:Black or African American-Male:American Indian or Alaska Native        0.0000000
+Male:Black or African American-Male:American Indian or Alaska Native          0.0000000
+Female:White-Male:American Indian or Alaska Native                            0.0000000
+Male:White-Male:American Indian or Alaska Native                              1.0000000
+Male:Asian or Pacific Islander-Female:Asian or Pacific Islander               0.7572085
+Female:Black or African American-Female:Asian or Pacific Islander             0.0000763
+Male:Black or African American-Female:Asian or Pacific Islander               0.0000000
+Female:White-Female:Asian or Pacific Islander                                 0.0000000
+Male:White-Female:Asian or Pacific Islander                                   0.0000000
+Female:Black or African American-Male:Asian or Pacific Islander               0.0188790
+Male:Black or African American-Male:Asian or Pacific Islander                 0.0000000
+Female:White-Male:Asian or Pacific Islander                                   0.0000000
+Male:White-Male:Asian or Pacific Islander                                     0.0000000
+Male:Black or African American-Female:Black or African American               0.0000000
+Female:White-Female:Black or African American                                 0.0000004
+Male:White-Female:Black or African American                                   0.0000000
+Female:White-Male:Black or African American                                   0.0000012
+Male:White-Male:Black or African American                                     0.0000000
+Male:White-Female:White                                                       0.0000000
 \end{verbatim}
 
-\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-11-1.pdf}
+\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-10-1.pdf}
 
-\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-11-2.pdf}
+\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-10-2.pdf}
 
-\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-11-3.pdf}
+\includegraphics{Sec4_Team10_files/figure-pdf/unnamed-chunk-10-3.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# This code will run, but the code and its output will be hidden.}
 \FunctionTok{library}\NormalTok{(dplyr)}
 \FunctionTok{library}\NormalTok{(tidyr)}
-\NormalTok{suicide\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/hanzi/Downloads/Death\_rates\_for\_suicide\_\_by\_sex\_\_race\_\_Hispanic\_origin\_\_and\_age\_\_United\_States.csv"}\NormalTok{)}
-\NormalTok{drug\_overdose\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/hanzi/Downloads/Drug\_overdose\_death\_rates\_\_by\_drug\_type\_\_sex\_\_age\_\_race\_\_and\_Hispanic\_origin\_\_United\_States.csv"}\NormalTok{)}
+\NormalTok{suicide\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://data.cdc.gov/api/views/95ax{-}ymtc/rows.csv?accessType=DOWNLOAD"}\NormalTok{)}
+\NormalTok{drug\_overdose\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://data.cdc.gov/api/views/9j2v{-}jamp/rows.csv?accessType=DOWNLOAD"}\NormalTok{)}
 \CommentTok{\# Clean the suicide dataset}
 \NormalTok{suicide\_clean }\OtherTok{\textless{}{-}}\NormalTok{ suicide\_data }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate}\NormalTok{(}

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Group 10">
+<meta name="dcterms.date" content="2024-12-18">
 
-<title>Team 10</title>
+<title>Suicide and drug overdose rates analyze</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,14 +81,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Team 10</h1>
+<h1 class="title">Suicide and drug overdose rates analyze</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Group 10 </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 18, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -96,12 +110,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="clean-code-for-research-question-1which-gender-race-combinations-show-the-highest-vulnerability-to-either-suicide-or-drug-overdose" class="level2">
-<h2 class="anchored" data-anchor-id="clean-code-for-research-question-1which-gender-race-combinations-show-the-highest-vulnerability-to-either-suicide-or-drug-overdose">Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Health disparities, particularly those concerning mental health and substance abuse, are among the most critical challenges facing public health systems. Suicide and drug overdoses are leading causes of death in the United States, and their prevalence differs across demographic groups. Examining these disparities provides insights into the populations most at risk and highlights areas for intervention.</p>
+<p>This report investigates three research questions regarding suicide and drug overdose rates:</p>
+<p>1. Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?</p>
+<p>2. What are the differences in suicide and drug overdose rates among various age groups?</p>
+<p>3. Is there a significant difference in suicide rates between male and female across racial group?</p>
+<p>We will present background information, describe the methods used for analysis, summarize the collected data, and discuss our findings and their implications.</p>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<section id="data-provenance" class="level3">
+<h3 class="anchored" data-anchor-id="data-provenance">Data Provenance</h3>
+<p>The datasets used in this research were found from Data.gov, the U.S. government’s open data platform that provides access to a wide range of datasets collected by federal agencies. Specifically, the datasets on drug overdose death rates and suicide death rates were provided by the National Center for Health Statistics (NCHS), a division of the Centers for Disease Control and Prevention (CDC). These datasets were created to track trends in mortality rates across different demographic groups and to inform public health strategies. This information provides the foundation for analyzing disparities and identifying groups that may be disproportionately affected. These datasets are aligned with FAIR principles—they are findable, accessible, interoperable, and reusable—and provide the foundation for demographic analyses.</p>
+</section>
+<section id="attributes-for-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="attributes-for-analysis">Attributes for Analysis</h3>
+<p>Our analysis focuses on five key attributes: Gender, Age, Race, Suicide Rate, and Overdose Rate. These attributes were chosen as they provide a clear and measurable framework to investigate disparities in public health outcomes. Gender and Race are essential demographic indicators that help identify populations at risk based on societal and systemic factors. Age allows us to assess how vulnerabilities change across different life stages, such as adolescence, middle adulthood, and elderly years. Suicide_Rate and Overdose_Rate are expressed as deaths per 100,000 individuals, offering a standardized metric for comparison across groups. Together, these attributes allow for a multidimensional analysis, capturing the complexity of health disparities and enabling targeted recommendations for intervention.</p>
+</section>
+<section id="analytical-approach" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-approach">Analytical Approach</h3>
+<p>To answer the research questions, we used different methods to analyze the data. For visual patterns and comparisons, we created charts like bar graphs and heatmaps to show the differences in suicide and overdose rates across groups. For the third research question—examining differences in suicide rates between males and females across racial groups—we performed a correlation and significance test to see if the differences are statistically meaningful. This approach helps us understand which groups are most affected and how these issues vary by demographic factors.</p>
+</section>
+</section>
+<section id="fair-principle" class="level2">
+<h2 class="anchored" data-anchor-id="fair-principle">FAIR Principle</h2>
+<p>The datasets used in this study follow the FAIR principles, which make them easy to find, use, and share. They are available on Data.gov, a platform that organizes data with clear titles and descriptions so anyone can search for and access them. The data can be downloaded in formats like CSV, which work with many tools like Excel, R, and Python. It is also structured consistently, making it easy to combine with other datasets or use for different kinds of analysis. Detailed information about the data, including how it was collected and its limitations, is provided, ensuring that others can understand and reuse it for their own research. Following these principles helps ensure the data is clear, accessible, and useful for future studies.</p>
 </section>
 <section id="exploratory-data-analysis-eda-for-resesarch-question-one" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda-for-resesarch-question-one">Exploratory Data Analysis (EDA) for resesarch question one</h2>
+<p>Suicide is a complex and deeply personal tragedy, but for some groups, the burden is disproportionately heavy. Among American Indian or Alaska Native males, suicide rates are the highest of any racial or gender group, even exceeding those of White males, who also face alarmingly high rates. This stark reality points to deeply rooted issues such as intergenerational trauma, marginalization, and socio-economic hardships that have plagued these communities for generations. The gender disparity in suicide rates is clear, with males across all racial groups more likely to take their own lives. However, American Indian or Alaska Native females also face significant struggles, with suicide rates higher than females in any other racial category. In contrast, Asian or Pacific Islander males and females show the lowest suicide rates, suggesting the potential influence of cultural or community-based protective factors. These numbers tell a story that demands attention and action. The high suicide rates among American Indian or Alaska Native males highlight a desperate need for targeted mental health support and culturally sensitive interventions. Many of these individuals live in rural or tribal areas where access to mental health care is severely limited, and systemic barriers only deepen the divide. Efforts to support American Indian or Alaska Native females must also address the stigma surrounding mental health, improve community resources, and tackle the socio-economic challenges that disproportionately affect these populations. To fully understand and address these disparities, further research is needed to explore the role of historical trauma, substance abuse, and systemic inequities in healthcare access. The path forward requires empathy, collaboration, and commitment. Engaging directly with tribal communities to develop mental health programs that honor cultural values and traditions can make these interventions more effective. Advocacy for increased funding is crucial to ensure that mental health services reach those most in need, with a focus on both prevention and treatment. Public health campaigns can play a vital role in raising awareness and reducing stigma, particularly among at-risk groups such as American Indian or Alaska Native males. Addressing this issue is not just a matter of statistics—it is a moral imperative to create a society where everyone, regardless of their background, has the support they need to lead a life of hope and purpose.</p>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1600 rows containing missing values or values outside the scale range
+(`geom_bar()`).</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -111,6 +155,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>To gain further clarity, a heatmap of suicide and overdose rates by race and gender reveals additional disparities. The darkest shades on the heatmap, representing the highest rates, are concentrated among American Indian or Alaska Native males for suicide and among White males for overdose. This visualization reinforces earlier findings that these groups bear the brunt of these crises. For females, American Indian or Alaska Native women show the highest suicide rates, while White females exhibit higher overdose rates compared to other female groups. Asian or Pacific Islander individuals, consistent with previous observations, show the lightest shades, indicating the lowest rates for both suicide and overdose. The gender disparity persists across all racial groups, with males consistently reporting higher rates than females for both outcomes.</p>
+<p>The heatmap also underscores the compounded vulnerabilities faced by American Indian or Alaska Native communities, where both males and females face disproportionately high suicide rates. These findings point to the devastating impacts of systemic inequities, historical trauma, and marginalization. Similarly, the elevated overdose rates among White individuals highlight the significant role of substance use disorders in this demographic.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -120,426 +166,184 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>This approach allowed me to analyze the data in detail, test the hypotheses, and determine whether differences in suicide rates were significantly influenced by ethnic, gender, or a combination of these factors. The data, which were unequivocal and supported the rejection of the null hypothesis, showed that there are significant differences across gender, race, and their combinations. The alternative hypothesis (H₁) states that there are significant differences in suicide rates, suggesting that factors such as gender, race, or both influence the rates displayed in the data. If at least one group shows a substantial deviation, indicating a relationship between the observed suicide rates and gender, race, or their interaction, the null hypothesis would be rejected.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'Race'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Summary Table of Average Suicide and Overdose Rates by Race and Gender</caption>
-<colgroup>
-<col style="width: 39%">
-<col style="width: 8%">
-<col style="width: 25%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Race</th>
-<th style="text-align: left;">Gender</th>
-<th style="text-align: right;">Average Suicide Rate</th>
-<th style="text-align: right;">Average Overdose Rate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">American Indian or Alaska Native</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">6.582609</td>
-<td style="text-align: right;">5.7458333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">American Indian or Alaska Native</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">22.220652</td>
-<td style="text-align: right;">7.9946341</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Asian or Pacific Islander</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">3.407500</td>
-<td style="text-align: right;">0.7960784</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Asian or Pacific Islander</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">8.762500</td>
-<td style="text-align: right;">1.3919118</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Black or African American</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">2.263830</td>
-<td style="text-align: right;">2.5464029</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Black or African American</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">9.894444</td>
-<td style="text-align: right;">5.8938433</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">White</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: right;">6.250000</td>
-<td style="text-align: right;">4.2420290</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">White</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: right;">23.593478</td>
-<td style="text-align: right;">8.0163043</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<p>The combined insights from the bar chart and heatmap underscore the urgency of addressing the intertwined crises of suicide and overdose. The disparities highlighted across racial and gender lines demand comprehensive, targeted interventions. Public health strategies must prioritize culturally sensitive approaches that address the unique challenges faced by vulnerable groups like American Indian or Alaska Native and White individuals. Furthermore, gender-specific programs that integrate mental health care with substance use treatment can help mitigate the dual impact of these crises. Understanding these patterns is not just about analyzing data—it is about crafting effective solutions that provide hope and healing to those most in need. By addressing both prevention and treatment, society can take meaningful steps toward reducing the devastating toll of suicide and overdose on individuals, families, and communities.</p>
 </section>
 <section id="exploratory-data-analysis-eda-for-resesarch-question-two" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda-for-resesarch-question-two">Exploratory Data Analysis (EDA) for resesarch question two</h2>
-<p>The second research question, based on my topic, is: “Is there a significant difference in suicide rates between males and females across racial groups?” To answer this question, I analyzed the data in detail, tested the hypotheses, and determined whether differences in suicide rates were significantly influenced by ethnicity, gender, or their combination. The approach used ensured a thorough examination of the data, producing results that addressed the research question with confidence. To begin, I claim the two hypotheses to guide the test. The null hypothesis (H₀) assumed that there are no significant differences in suicide rates across gender-race combinations, meaning that any observed differences are purely random and there is no meanful. Conversely, the alternative hypothesis (H₁) stated that there are significant differences in suicide rates across these groups. This hypothesis suggested that certain gender-race combinations might be more vulnerable than others, indicating a relationship between the observed suicide rates and the combination of gender and race. If at least one group showed a substantial deviation, this would provide evidence to reject the null hypothesis in favor of the alternative hypothesis.</p>
-<p>The data analysis began with thorough cleaning and organization. I started by assigning meaningful names to each group and removing irrelevant or incomplete data that was not applicable to this research question. Once cleaned, the dataset was categorized into three primary components: gender (male and female), race (White, Black or African American, American Indian or Alaska Native, and Asian or Pacific Islander), and a gender-race combination variable. This categorization was crucial as it allowed for a detailed examination of both the independent effects of gender and race, as well as their interaction. For example, while males overall might have higher suicide rates, interaction analysis could reveal that certain racial groups within males, such as American Indian or Alaska Native males, show significantly higher rates than others. This organization ensured the analysis was as thorough as possible and that no critical trends were overlooked.And below was a my analyzed clean table.</p>
+<p>The second research question, based on my topic, is: “Is there a significant difference in suicide rates between males and females across racial groups?” To answer this question, I analyzed the data in detail, tested the hypotheses, and determined whether differences in suicide rates were significantly influenced by ethnicity, gender, or their combination. The approach used ensured a thorough examination of the data, producing results that addressed the research question with confidence.</p>
+<p>To begin, I claim the two hypotheses to guide the test. The null hypothesis (H₀) assumed that there are no significant differences in suicide rates across gender-race combinations, meaning that any observed differences are purely random and there is no meanful. Conversely, the alternative hypothesis (H₁) stated that there are significant differences in suicide rates across these groups. This hypothesis suggested that certain gender-race combinations might be more vulnerable than others, indicating a relationship between the observed suicide rates and the combination of gender and race. If at least one group showed a substantial deviation, this would provide evidence to reject the null hypothesis in favor of the alternative hypothesis.</p>
+<p>The data analysis began with thorough cleaning and organization. I started by assigning meaningful names to each group and removing irrelevant or incomplete data that was not applicable to this research question. Once cleaned, the dataset was categorized into three primary components: gender (male and female), race (White, Black or African American, American Indian or Alaska Native, and Asian or Pacific Islander), and a gender-race combination variable. This categorization was crucial as it allowed for a detailed examination of both the independent effects of gender and race, as well as their interaction. For example, while males overall might have higher suicide rates, interaction analysis could reveal that certain racial groups within males, such as American Indian or Alaska Native males, show significantly higher rates than others. This organization ensured the analysis was as thorough as possible and that no critical trends were overlooked.And all the graph output was below the analyze because it was run out in one combine graph.</p>
 <p>Once the data was ready, I performed a Two-Way ANOVA (Analysis of Variance) to determine whether the mean suicide rates differed significantly by race, gender, and their interaction. The Two-Way ANOVA is a statistical test designed to assess the effects of two independent variables—gender and race in this case—on one dependent variable, the suicide rates. The test addressed two primary questions: (1) whether race and gender individually influence suicide rates (main effects), and (2) whether the combination of gender and race creates unique patterns that cannot be explained by their individual effects (interaction effect). For instance, the main effect might show that males have higher suicide rates than females, while the interaction effect could reveal that White males or American Indian or Alaska Native males are particularly vulnerable compared to other groups.</p>
-<p>The results from the Two-Way ANOVA provided the first answer to my research question by confirming that there were significant differences in suicide rates between groups. However, while the ANOVA identified the presence of significant differences, it could not pinpoint which specific groups were different. To address this limitation, I used a Tukey HSD (Honestly Significant Difference) post-hoc test, a statistical method designed to compare the means of multiple groups while controlling for Type I error (the risk of incorrectly identifying a significant difference due to random chance). The Tukey HSD test builds confidence intervals for each pairwise comparison between groups. If a confidence interval does not include zero, it confirms that the difference between the two groups is statistically significant. For example, a confidence interval of [2.5, 7.0] for the difference in suicide rates between males and females means the true difference lies between 2.5 and 7.0, and since zero is not included, the difference is substantial.</p>
+<p>The results from the Two-Way ANOVA provided the first answer to my research question by confirming that there were significant differences in suicide rates between groups. However, while the ANOVA identified the presence of significant differences, it could not pinpoint which specific groups were different. To address this limitation, I used a Tukey HSD (Honestly Significant Difference) post-hoc test, a statistical method designed to compare the means of multiple groups while controlling for Type I error (the risk of incorrectly identifying a significant difference due to random chance). The Tukey HSD test builds confidence intervals for each pairwise comparison between groups. If a confidence interval does not include zero, it confirms that the difference between the two groups is statistically significant. For example, a confidence interval of [2.5, 7.0] for the difference in suicide rates between males and females means the true difference lies between 2.5 and 7.0, and since zero is not included, the difference is substantial.The data is below these analyze.</p>
 <p>The Tukey HSD test results provided detailed insights. First, in terms of gender, the findings showed that males consistently had significantly higher suicide rates than females. This conclusion was strongly supported by the confidence intervals, which were all positive and excluded zero, indicating that the difference was unlikely to be random. Next, the analysis turned to racial groups, revealing significant patterns. For instance, Asian or Pacific Islanders had the lowest overall suicide rates, while American Indian or Alaska Native individuals had the highest rates of any racial group. These findings suggested that race alone plays a substantial role in influencing suicide rates.</p>
 <p>Finally, when examining the combined effects of gender and race, the interaction analysis revealed even more pronounced disparities. White males and American Indian or Alaska Native males had the highest suicide rates of any group, significantly higher than groups like Asian females and Black females, which showed the lowest rates. The Tukey HSD test validated these findings by showing that the confidence intervals for these comparisons did not overlap zero, confirming their statistical significance. In summary, the statistical analysis provided compelling evidence that gender, race, and their combination significantly influence suicide rates. The rejection of the null hypothesis (H₀) was supported by both the ANOVA and Tukey HSD results. Across all racial groups, males were consistently found to be at greater risk of suicide compared to females. Additionally, racial disparities emerged, with American Indian or Alaska Native individuals facing the highest risk overall. When gender and race were combined, certain groups, such as American Indian or Alaska Native males and White males, were identified as particularly vulnerable. These findings underscore the importance of analyzing gender and race together, as this approach revealed patterns that would not have been apparent if the factors were examined independently. By following this systematic methodology, I was able to confidently answer the research question and uncover significant relationships within the data.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Tukey HSD Test Results:"</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Tukey multiple comparisons of means
-    95% family-wise confidence level
-
-Fit: aov(formula = Suicide_Rate ~ Gender * Race, data = cleaned_data)
-
-$Gender
-                diff      lwr      upr p adj
-Male-Female 12.33521 12.20627 12.46415     0
-
-$Race
-                                                                  diff
-Asian or Pacific Islander-American Indian or Alaska Native -8.31663043
-Black or African American-American Indian or Alaska Native -8.27135642
-White-American Indian or Alaska Native                      0.52010870
-Black or African American-Asian or Pacific Islander         0.04527401
-White-Asian or Pacific Islander                             8.83673913
-White-Black or African American                             8.79146512
-                                                                  lwr
-Asian or Pacific Islander-American Indian or Alaska Native -8.5440960
-Black or African American-American Indian or Alaska Native -8.5400499
-White-American Indian or Alaska Native                      0.3007214
-Black or African American-Asian or Pacific Islander        -0.2300549
-White-Asian or Pacific Islander                             8.6092735
-White-Black or African American                             8.5227717
-                                                                  upr     p adj
-Asian or Pacific Islander-American Indian or Alaska Native -8.0891649 0.0000000
-Black or African American-American Indian or Alaska Native -8.0026630 0.0000000
-White-American Indian or Alaska Native                      0.7394960 0.0000000
-Black or African American-Asian or Pacific Islander         0.3206029 0.9746449
-White-Asian or Pacific Islander                             9.0642047 0.0000000
-White-Black or African American                             9.0601586 0.0000000
-
-$`Gender:Race`
-                                                                                     diff
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  15.6380435
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -3.1751087
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          2.1798913
-Female:Black or African American-Female:American Indian or Alaska Native       -4.3187789
-Male:Black or African American-Female:American Indian or Alaska Native          3.3118357
-Female:White-Female:American Indian or Alaska Native                           -0.3326087
-Male:White-Female:American Indian or Alaska Native                             17.0108696
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -18.8131522
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.4581522
-Female:Black or African American-Male:American Indian or Alaska Native        -19.9568224
-Male:Black or African American-Male:American Indian or Alaska Native          -12.3262077
-Female:White-Male:American Indian or Alaska Native                            -15.9706522
-Male:White-Male:American Indian or Alaska Native                                1.3728261
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 5.3550000
-Female:Black or African American-Female:Asian or Pacific Islander              -1.1436702
-Male:Black or African American-Female:Asian or Pacific Islander                 6.4869444
-Female:White-Female:Asian or Pacific Islander                                   2.8425000
-Male:White-Female:Asian or Pacific Islander                                    20.1859783
-Female:Black or African American-Male:Asian or Pacific Islander                -6.4986702
-Male:Black or African American-Male:Asian or Pacific Islander                   1.1319444
-Female:White-Male:Asian or Pacific Islander                                    -2.5125000
-Male:White-Male:Asian or Pacific Islander                                      14.8309783
-Male:Black or African American-Female:Black or African American                 7.6306147
-Female:White-Female:Black or African American                                   3.9861702
-Male:White-Female:Black or African American                                    21.3296485
-Female:White-Male:Black or African American                                    -3.6444444
-Male:White-Male:Black or African American                                      13.6990338
-Male:White-Female:White                                                        17.3434783
-                                                                                      lwr
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  15.2719840
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -3.5546472
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          1.8003528
-Female:Black or African American-Female:American Indian or Alaska Native       -4.7639174
-Male:Black or African American-Female:American Indian or Alaska Native          2.8601975
-Female:White-Female:American Indian or Alaska Native                           -0.6986682
-Male:White-Female:American Indian or Alaska Native                             16.6448101
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -19.1926907
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.8376907
-Female:Black or African American-Male:American Indian or Alaska Native        -20.4019609
-Male:Black or African American-Male:American Indian or Alaska Native          -12.7778459
-Female:White-Male:American Indian or Alaska Native                            -16.3367117
-Male:White-Male:American Indian or Alaska Native                                1.0067666
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 4.9624449
-Female:Black or African American-Female:Asian or Pacific Islander              -1.5999576
-Male:Black or African American-Female:Asian or Pacific Islander                 6.0243139
-Female:White-Female:Asian or Pacific Islander                                   2.4629615
-Male:White-Female:Asian or Pacific Islander                                    19.8064397
-Female:Black or African American-Male:Asian or Pacific Islander                -6.9549576
-Male:Black or African American-Male:Asian or Pacific Islander                   0.6693139
-Female:White-Male:Asian or Pacific Islander                                    -2.8920385
-Male:White-Male:Asian or Pacific Islander                                      14.4514397
-Male:Black or African American-Female:Black or African American                 7.1128060
-Female:White-Female:Black or African American                                   3.5410317
-Male:White-Female:Black or African American                                    20.8845100
-Female:White-Male:Black or African American                                    -4.0960827
-Male:White-Male:Black or African American                                      13.2473956
-Male:White-Female:White                                                        16.9774188
-                                                                                       upr
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native  16.00410295
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native       -2.79557015
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native          2.55942985
-Female:Black or African American-Female:American Indian or Alaska Native       -3.87364044
-Male:Black or African American-Female:American Indian or Alaska Native          3.76347396
-Female:White-Female:American Indian or Alaska Native                            0.03345078
-Male:White-Female:American Indian or Alaska Native                             17.37692904
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        -18.43361363
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          -13.07861363
-Female:Black or African American-Male:American Indian or Alaska Native        -19.51168392
-Male:Black or African American-Male:American Indian or Alaska Native          -11.87456951
-Female:White-Male:American Indian or Alaska Native                            -15.60459270
-Male:White-Male:American Indian or Alaska Native                                1.73888556
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander                 5.74755505
-Female:Black or African American-Female:Asian or Pacific Islander              -0.68738278
-Male:Black or African American-Female:Asian or Pacific Islander                 6.94957501
-Female:White-Female:Asian or Pacific Islander                                   3.22203854
-Male:White-Female:Asian or Pacific Islander                                    20.56551680
-Female:Black or African American-Male:Asian or Pacific Islander                -6.04238278
-Male:Black or African American-Male:Asian or Pacific Islander                   1.59457501
-Female:White-Male:Asian or Pacific Islander                                    -2.13296146
-Male:White-Male:Asian or Pacific Islander                                      15.21051680
-Male:Black or African American-Female:Black or African American                 8.14842330
-Female:White-Female:Black or African American                                   4.43130868
-Male:White-Female:Black or African American                                    21.77478694
-Female:White-Male:Black or African American                                    -3.19280623
-Male:White-Male:Black or African American                                      14.15067203
-Male:White-Female:White                                                        17.70953774
-                                                                                 p adj
-Male:American Indian or Alaska Native-Female:American Indian or Alaska Native 0.000000
-Female:Asian or Pacific Islander-Female:American Indian or Alaska Native      0.000000
-Male:Asian or Pacific Islander-Female:American Indian or Alaska Native        0.000000
-Female:Black or African American-Female:American Indian or Alaska Native      0.000000
-Male:Black or African American-Female:American Indian or Alaska Native        0.000000
-Female:White-Female:American Indian or Alaska Native                          0.106855
-Male:White-Female:American Indian or Alaska Native                            0.000000
-Female:Asian or Pacific Islander-Male:American Indian or Alaska Native        0.000000
-Male:Asian or Pacific Islander-Male:American Indian or Alaska Native          0.000000
-Female:Black or African American-Male:American Indian or Alaska Native        0.000000
-Male:Black or African American-Male:American Indian or Alaska Native          0.000000
-Female:White-Male:American Indian or Alaska Native                            0.000000
-Male:White-Male:American Indian or Alaska Native                              0.000000
-Male:Asian or Pacific Islander-Female:Asian or Pacific Islander               0.000000
-Female:Black or African American-Female:Asian or Pacific Islander             0.000000
-Male:Black or African American-Female:Asian or Pacific Islander               0.000000
-Female:White-Female:Asian or Pacific Islander                                 0.000000
-Male:White-Female:Asian or Pacific Islander                                   0.000000
-Female:Black or African American-Male:Asian or Pacific Islander               0.000000
-Male:Black or African American-Male:Asian or Pacific Islander                 0.000000
-Female:White-Male:Asian or Pacific Islander                                   0.000000
-Male:White-Male:Asian or Pacific Islander                                     0.000000
-Male:Black or African American-Female:Black or African American               0.000000
-Female:White-Female:Black or African American                                 0.000000
-Male:White-Female:Black or African American                                   0.000000
-Female:White-Male:Black or African American                                   0.000000
-Male:White-Male:Black or African American                                     0.000000
-Male:White-Female:White                                                       0.000000</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Sec4_Team10_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code will run, but the code and its output will be hidden.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>suicide_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv"</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>drug_overdose_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the suicide dataset</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    Gender, </span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    Race,</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Suicide_Rate =</span> ESTIMATE</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the drug overdose dataset</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    Gender,</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    Race,</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">Overdose_Rate =</span> ESTIMATE</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two datasets</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>  suicide_clean,</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean,</span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Race"</span>, <span class="st">"Year"</span>, <span class="st">"Age_Group"</span>),</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> <span class="cn">FALSE</span> </span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">"Unknown"</span>) <span class="sc">%&gt;%</span> <span class="co"># Remove rows with unknown race</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Age_Group, <span class="sc">-</span>Year)     <span class="co"># Drop the Age_Group and Year columns entirely</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(merged_data, <span class="st">"Cleaned_Combined_Death_Rates.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  merged_data,</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv"</span>,</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="do">## Image 1 for Question 1</span></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart: Death rates by gender and race</span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Suicide_Rate, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Suicide Rates by Race and Gender"</span>,</span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Suicide Rate"</span>,</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Gender"</span></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="do">## Image 2 for Question 1</span></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required library</span></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform data to long format</span></span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>merged_data_long <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Suicide_Rate, Overdose_Rate), </span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Variable"</span>, </span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Rate"</span>)</span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Heatmap: Combined rates by race and gender</span></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data_long, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Gender, <span class="at">fill =</span> Rate)) <span class="sc">+</span></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Variable, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># Adjust facets</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>, <span class="at">name =</span> <span class="st">"Rate"</span>) <span class="sc">+</span></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Rotate and space x-axis labels</span></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>) <span class="co"># For facet titles</span></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Heatmap of Suicide and Overdose Rates by Race and Gender"</span>,</span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gender"</span></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="do">## Image 3 for Question 1</span></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the data by Race and Gender</span></span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Race, Gender) <span class="sc">%&gt;%</span></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Suicide_Rate =</span> <span class="fu">mean</span>(Suicide_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Overdose_Rate =</span> <span class="fu">mean</span>(Overdose_Rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the summary table</span></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_table, </span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Race"</span>, <span class="st">"Gender"</span>, <span class="st">"Average Suicide Rate"</span>, <span class="st">"Average Overdose Rate"</span>),</span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Summary Table of Average Suicide and Overdose Rates by Race and Gender"</span>)</span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load the dataset</span></span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Combined_Death_Rates.csv"</span>)</span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Clean the data</span></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Select relevant columns and remove rows with missing values</span></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, Race, Suicide_Rate) <span class="sc">%&gt;%</span></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Perform Two-Way ANOVA</span></span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Test for differences in suicide rates between gender and racial groups</span></span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(Suicide_Rate <span class="sc">~</span> Gender <span class="sc">*</span> Race, <span class="at">data =</span> cleaned_data)</span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Perform Post-hoc Tukey HSD test</span></span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>tukey_results <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_model)</span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Tukey HSD Test Results:"</span>)</span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tukey_results)</span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Adjust graphical parameters for better margins and readability</span></span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">27.1</span>, <span class="dv">6</span>, <span class="dv">2</span>))  <span class="co"># Add extra space at the top for the title</span></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">cex.axis =</span> <span class="fl">0.6</span>)        <span class="co"># Reduce axis text size</span></span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las =</span> <span class="dv">2</span>)               <span class="co"># Rotate axis labels</span></span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 7: Plot Tukey HSD results</span></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tukey_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code will run, but the code and its output will be hidden.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>suicide_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://data.cdc.gov/api/views/95ax-ymtc/rows.csv?accessType=DOWNLOAD"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>drug_overdose_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://data.cdc.gov/api/views/9j2v-jamp/rows.csv?accessType=DOWNLOAD"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the suicide dataset</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>suicide_clean <span class="ot">&lt;-</span> suicide_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    Gender, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Suicide_Rate =</span> ESTIMATE</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean the drug overdose dataset</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>drug_overdose_clean <span class="ot">&lt;-</span> drug_overdose_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Male"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Male"</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Female"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Female"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"All persons"</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">Race =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"White"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"White"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Black or African American"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Black or African American"</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"Asian or Pacific Islander"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"Asian or Pacific Islander"</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>      <span class="fu">grepl</span>(<span class="st">"American Indian or Alaska Native"</span>, STUB_LABEL) <span class="sc">~</span> <span class="st">"American Indian or Alaska Native"</span>,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Unknown"</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    Gender,</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    Race,</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> YEAR,</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age_Group =</span> AGE,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">Overdose_Rate =</span> ESTIMATE</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Gender <span class="sc">!=</span> <span class="st">"All persons"</span>) <span class="co"># Exclude general rows if needed</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the two datasets</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> <span class="fu">merge</span>(</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  suicide_clean,</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  drug_overdose_clean,</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Gender"</span>, <span class="st">"Race"</span>, <span class="st">"Year"</span>, <span class="st">"Age_Group"</span>),</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> <span class="cn">FALSE</span> </span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>merged_data <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">"Unknown"</span>) <span class="sc">%&gt;%</span> <span class="co"># Remove rows with unknown race</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Age_Group, <span class="sc">-</span>Year)     <span class="co"># Drop the Age_Group and Year columns entirely</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(merged_data, <span class="st">"Cleaned_Combined_Death_Rates.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  merged_data,</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="st">"C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv"</span>,</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="do">## Image 1 for Question 1</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart: Death rates by gender and race</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Suicide_Rate, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Suicide Rates by Race and Gender"</span>,</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Suicide Rate"</span>,</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Gender"</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="do">## Image 2 for Question 1</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required library</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform data to long format</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>merged_data_long <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Suicide_Rate, Overdose_Rate), </span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Variable"</span>, </span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Rate"</span>)</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Heatmap: Combined rates by race and gender</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> merged_data_long, <span class="fu">aes</span>(<span class="at">x =</span> Race, <span class="at">y =</span> Gender, <span class="at">fill =</span> Rate)) <span class="sc">+</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Variable, <span class="at">scales =</span> <span class="st">"free"</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="co"># Adjust facets</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>, <span class="at">name =</span> <span class="st">"Rate"</span>) <span class="sc">+</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Rotate and space x-axis labels</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>) <span class="co"># For facet titles</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Heatmap of Suicide and Overdose Rates by Race and Gender"</span>,</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Race"</span>,</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gender"</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Load the dataset</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Cleaned_Combined_Death_Rates.csv"</span>)</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Clean the data</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gender, Race, Suicide_Rate) <span class="sc">%&gt;%</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Perform Two-Way ANOVA</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="co"># Test for differences in suicide rates between gender and racial groups</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">aov</span>(Suicide_Rate <span class="sc">~</span> Gender <span class="sc">*</span> Race, <span class="at">data =</span> cleaned_data)</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Perform post-hoc Tukey HSD test</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>tukey_results <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_model)</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Adjust graphical parameters for better margins and readability</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">18</span>, <span class="dv">4</span>, <span class="dv">2</span>))   <span class="co"># Increase left margin for better label visibility</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las =</span> <span class="dv">2</span>)               <span class="co"># Rotate axis labels</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">cex.axis =</span> <span class="fl">0.8</span>)        <span class="co"># Reduce axis text size</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 6: Plot Tukey HSD results</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tukey_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
