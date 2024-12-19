@@ -1,7 +1,13 @@
 ---
-title: "Team 10"
-format: html
-editor: visual
+title: "Factors That Affect Student Performance In Exams"
+author: "Mutkallam Warraich and Jackie Yang"
+format: pdf
+date: today
+self-contained: true
+toc: true
+echo: false
+theme:
+  dark: darkly
 ---
 
 ## Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
@@ -218,9 +224,11 @@ anova_model <- aov(Suicide_Rate ~ Gender * Race, data = cleaned_data)
 
 # Step 5: Perform Post-hoc Tukey HSD test
 tukey_results <- TukeyHSD(anova_model)
+print("Tukey HSD Test Results:")
+print(tukey_results)
 
 # Step 6: Adjust graphical parameters for better margins and readability
-par(mar = c(5, 27.1, 6, 2))  # Add extra space at the top for the title
+par(mar = c(5, 4, 4, 2) + 0.1)
 par(cex.axis = 0.6)        # Reduce axis text size
 par(las = 2)               # Rotate axis labels
 
