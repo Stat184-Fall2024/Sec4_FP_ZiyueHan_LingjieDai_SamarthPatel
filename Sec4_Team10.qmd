@@ -4,26 +4,8 @@ format: html
 editor: visual
 ---
 
----
-title: "Stat 184 Project"
-format: html
-editor: visual
----
 
-Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
-
-Running Code
-
-When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-{r}
-1 + 1
-
-You can add options to executable code like this
-
-{r}
+```{r}
 #| echo: false
 # Load Required Libraries
 library(dplyr)
@@ -81,10 +63,11 @@ kable(age_summary, col.names = c("Age Group", "Average Suicide Rate", "Average O
 
 
 
+```
 
-The echo: false option disables the printing of code (only output is displayed).
+The `echo: false` option disables the printing of code (only output is displayed).
 
-{r}
+```{r}
 # Visualize: Bar Chart Comparing Suicide and Overdose Rates
 age_summary_long <- age_summary %>%
   pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
@@ -101,4 +84,4 @@ ggplot(age_summary_long, aes(x = Age_Group, y = Rate, fill = Rate_Type)) +
     y = "Rate (Per 100,000 Residents)",
     fill = "Rate Type"
   )
-
+```
