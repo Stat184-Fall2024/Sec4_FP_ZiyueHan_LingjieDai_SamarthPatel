@@ -10,13 +10,22 @@ theme:
   dark: darkly
 ---
 
+```{r}
+install.packages("xfun")
+
+```
+
+```{r}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+
 ## Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
 ```{r include=FALSE}
 # This code will run, but the code and its output will be hidden.
 library(dplyr)
 library(tidyr)
-install.packages("tinytex")
-tinytex::install_tinytex()
 ```
 
 ```{r}
