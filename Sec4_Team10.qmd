@@ -14,6 +14,12 @@ This research question examines the disparities in suicide and drug overdose rat
 ```{r}
 #| echo: false
 # Visualize: Bar Chart Comparing Suicide and Overdose Rates
+age_summary <- merged_data %>%
+  group_by(Age_Group) %>%
+  summarize(
+    Avg_Suicide_Rate = mean(Suicide_Rate, na.rm = TRUE),
+    Avg_Overdose_Rate = mean(Overdose_Rate, na.rm = TRUE)
+  )
 age_summary_long <- age_summary %>%
   pivot_longer(cols = c(Avg_Suicide_Rate, Avg_Overdose_Rate), 
                names_to = "Rate_Type", 
