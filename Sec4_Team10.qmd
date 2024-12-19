@@ -5,28 +5,20 @@ editor: visual
 ---
 
 ## Clean Code for Research Question 1:Which gender-race combinations show the highest vulnerability to either suicide or drug overdose?
-
-```{r}
-# Load libraries
+```{r include=FALSE}
+# This code will run, but the code and its output will be hidden.
 library(dplyr)
 library(tidyr)
 ```
 
 ```{r}
+#| echo: false
 suicide_data <- read.csv("C:/Users/hanzi/Downloads/Death_rates_for_suicide__by_sex__race__Hispanic_origin__and_age__United_States.csv")
 drug_overdose_data <- read.csv("C:/Users/hanzi/Downloads/Drug_overdose_death_rates__by_drug_type__sex__age__race__and_Hispanic_origin__United_States.csv")
 ```
 
 ```{r}
-unique(suicide_data$STUB_LABEL)
-unique(suicide_data$STUB_NAME)
-unique(suicide_data$AGE)
-unique(drug_overdose_data$STUB_LABEL)
-unique(drug_overdose_data$STUB_NAME)
-unique(drug_overdose_data$AGE)
-```
-
-```{r}
+#| echo: false
 # Clean the suicide dataset
 suicide_clean <- suicide_data %>%
   mutate(
@@ -79,16 +71,7 @@ drug_overdose_clean <- drug_overdose_data %>%
 ```
 
 ```{r}
-# Check for missing data
-sum(is.na(suicide_clean))
-sum(is.na(drug_overdose_clean))
-
-# Remove rows with missing data
-suicide_clean <- suicide_clean %>% drop_na()
-drug_overdose_clean <- drug_overdose_clean %>% drop_na()
-```
-
-```{r}
+#| echo: false
 # Merge the two datasets
 merged_data <- merge(
   suicide_clean,
@@ -104,33 +87,24 @@ merged_data <- merged_data %>%
 ```
 
 ```{r}
+#| echo: false
 write.csv(merged_data, "Cleaned_Combined_Death_Rates.csv", row.names = FALSE)
 ```
 
 ```{r}
-summary(merged_data)
-
-# Check unique values
-table(merged_data$Gender)
-table(merged_data$Race)
-table(merged_data$Year)
-table(merged_data$Age_Group)
-```
-
-```{r}
+#| echo: false
 write.csv(
   merged_data,
   "C:/Users/hanzi/Downloads/Cleaned_Combined_Death_Rates.csv",
   row.names = FALSE
 )
-
-print("The cleaned and further filtered dataset has been saved successfully!")
 ```
 
-## Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA) for resesarch question one
 
 ```{r}
 #| echo: false
+#| fig-cap: "Figure 1: Correlation Matrix"
 ## Image 1 for Question 1
 library(ggplot2)
 # Bar chart: Death rates by gender and race
@@ -183,6 +157,7 @@ ggplot(data = merged_data_long, aes(x = Race, y = Gender, fill = Rate)) +
     y = "Gender"
   )
 ```
+This approach allowed me to analyze the data in detail, test the hypotheses, and determine whether differences in suicide rates were significantly influenced by ethnic, gender, or a combination of these factors. The data, which were unequivocal and supported the rejection of the null hypothesis, showed that there are significant differences across gender, race, and their combinations. The alternative hypothesis (H₁) states that there are significant differences in suicide rates, suggesting that factors such as gender, race, or both influence the rates displayed in the data. If at least one group shows a substantial deviation, indicating a relationship between the observed suicide rates and gender, race, or their interaction, the null hypothesis would be rejected. 
 
 ```{r}
 #| echo: false
@@ -202,8 +177,32 @@ kable(summary_table,
       caption = "Summary Table of Average Suicide and Overdose Rates by Race and Gender")
 ```
 
+## Exploratory Data Analysis (EDA) for resesarch question two
+
+The second research question, based on my topic, is: “Is there a significant difference in suicide rates between males and females across racial groups?” To answer this question, I analyzed the data in detail, tested the hypotheses, and determined whether differences in suicide rates were significantly influenced by ethnicity, gender, or their combination. The approach used ensured a thorough examination of the data, producing results that addressed the research question with confidence.
+To begin, I claim the two hypotheses to guide the test. The null hypothesis (H₀) assumed that there are no significant differences in suicide rates across gender-race combinations, meaning that any observed differences are purely random and there is no meanful. Conversely, the alternative hypothesis (H₁) stated that there are significant differences in suicide rates across these groups. This hypothesis suggested that certain gender-race combinations might be more vulnerable than others, indicating a relationship between the observed suicide rates and the combination of gender and race. If at least one group showed a substantial deviation, this would provide evidence to reject the null hypothesis in favor of the alternative hypothesis.
+
+The data analysis began with thorough cleaning and organization. I started by assigning meaningful names to each group and removing irrelevant or incomplete data that was not applicable to this research question. Once cleaned, the dataset was categorized into three primary components: gender (male and female), race (White, Black or African American, American Indian or Alaska Native, and Asian or Pacific Islander), and a gender-race combination variable. This categorization was crucial as it allowed for a detailed examination of both the independent effects of gender and race, as well as their interaction. For example, while males overall might have higher suicide rates, interaction analysis could reveal that certain racial groups within males, such as American Indian or Alaska Native males, show significantly higher rates than others. This organization ensured the analysis was as thorough as possible and that no critical trends were overlooked.And below was a my analyzed clean table.
 
 ```{r}
+#| warning: false 
+#| fig-cap: "Figure 1: Clean database "
+```
+
+
+Once the data was ready, I performed a Two-Way ANOVA (Analysis of Variance) to determine whether the mean suicide rates differed significantly by race, gender, and their interaction. The Two-Way ANOVA is a statistical test designed to assess the effects of two independent variables—gender and race in this case—on one dependent variable, the suicide rates. The test addressed two primary questions: (1) whether race and gender individually influence suicide rates (main effects), and (2) whether the combination of gender and race creates unique patterns that cannot be explained by their individual effects (interaction effect). For instance, the main effect might show that males have higher suicide rates than females, while the interaction effect could reveal that White males or American Indian or Alaska Native males are particularly vulnerable compared to other groups.
+
+The results from the Two-Way ANOVA provided the first answer to my research question by confirming that there were significant differences in suicide rates between groups. However, while the ANOVA identified the presence of significant differences, it could not pinpoint which specific groups were different. To address this limitation, I used a Tukey HSD (Honestly Significant Difference) post-hoc test, a statistical method designed to compare the means of multiple groups while controlling for Type I error (the risk of incorrectly identifying a significant difference due to random chance). The Tukey HSD test builds confidence intervals for each pairwise comparison between groups. If a confidence interval does not include zero, it confirms that the difference between the two groups is statistically significant. For example, a confidence interval of [2.5, 7.0] for the difference in suicide rates between males and females means the true difference lies between 2.5 and 7.0, and since zero is not included, the difference is substantial.
+
+The Tukey HSD test results provided detailed insights. First, in terms of gender, the findings showed that males consistently had significantly higher suicide rates than females. This conclusion was strongly supported by the confidence intervals, which were all positive and excluded zero, indicating that the difference was unlikely to be random. Next, the analysis turned to racial groups, revealing significant patterns. For instance, Asian or Pacific Islanders had the lowest overall suicide rates, while American Indian or Alaska Native individuals had the highest rates of any racial group. These findings suggested that race alone plays a substantial role in influencing suicide rates.
+
+Finally, when examining the combined effects of gender and race, the interaction analysis revealed even more pronounced disparities. White males and American Indian or Alaska Native males had the highest suicide rates of any group, significantly higher than groups like Asian females and Black females, which showed the lowest rates. The Tukey HSD test validated these findings by showing that the confidence intervals for these comparisons did not overlap zero, confirming their statistical significance.
+In summary, the statistical analysis provided compelling evidence that gender, race, and their combination significantly influence suicide rates. The rejection of the null hypothesis (H₀) was supported by both the ANOVA and Tukey HSD results. Across all racial groups, males were consistently found to be at greater risk of suicide compared to females. Additionally, racial disparities emerged, with American Indian or Alaska Native individuals facing the highest risk overall. When gender and race were combined, certain groups, such as American Indian or Alaska Native males and White males, were identified as particularly vulnerable. These findings underscore the importance of analyzing gender and race together, as this approach revealed patterns that would not have been apparent if the factors were examined independently. By following this systematic methodology, I was able to confidently answer the research question and uncover significant relationships within the data.
+
+
+
+```{r}
+#| echo: false
 # Step 1: Load the dataset
 data <- read.csv("Cleaned_Combined_Death_Rates.csv")
 
@@ -217,14 +216,8 @@ cleaned_data <- data %>%
 # Test for differences in suicide rates between gender and racial groups
 anova_model <- aov(Suicide_Rate ~ Gender * Race, data = cleaned_data)
 
-# Step 4: Display ANOVA summary
-print("Summary of Two-Way ANOVA:")
-summary(anova_model)
-
 # Step 5: Perform Post-hoc Tukey HSD test
 tukey_results <- TukeyHSD(anova_model)
-print("Tukey HSD Test Results:")
-print(tukey_results)
 
 # Step 6: Adjust graphical parameters for better margins and readability
 par(mar = c(5, 27.1, 6, 2))  # Add extra space at the top for the title
